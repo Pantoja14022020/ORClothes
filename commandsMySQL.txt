@@ -1,0 +1,53 @@
+
+DDL - DATA DEFINITION LANGUAGE 
+Marca
+create table marca (id_marca int NOT NULL AUTO_INCREMENT PRIMARY KEY, nombre varchar(35) not null);
+
+Categoria
+create table categoria (id_categoria int NOT NULL PRIMARY KEY AUTO_INCREMENT, nombre varchar(40) not null);
+
+Subcategoria
+create table subcategoria (id_subcategoria int NOT NULL PRIMARY KEY AUTO_INCREMENT, nombre varchar(40) not null, id_categoria int, KEY id_categoria_idx (id_categoria));
+
+Estado
+create table estado (id_estado int NOT NULL AUTO_INCREMENT PRIMARY KEY, nombre varchar(35) not null);
+
+Usuario
+CREATE TABLE usuario(id_usuario int NOT NULL AUTO_INCREMENT PRIMARY KEY, nombre_usuario varchar(40), password varchar(16), id_pais int, KEY id_pais_idx(id_pais), telefono varchar(15), correo varchar(50));
+
+Prenda
+create table prenda (id_prenda int NOT NULL AUTO_INCREMENT PRIMARY KEY, nombre varchar(60) not null, id_categoria int, KEY id_categoria_idx(id_categoria), id_subcategoria int, KEY id_subcategoria_idx(id_subcategoria), id_marca int, KEY id_marca_idx(id_marca), color varchar(25), id_estado int, KEY id_estado_idx(id_estado), fotografia text, disponible bool not null, necesita_reparacion bool not null, tipo_reparacion varchar(30), id_usuario int, KEY id_usuario_idx(id_usuario));
+
+Pais
+CREATE TABLE pais(id_pais int NOT NULL AUTO_INCREMENT PRIMARY KEY, nombre varchar(50), lada varchar(5));
+
+
+
+
+
+
+DML - DATA MANIPULATION LANGUAGE
+
+Marca:
+INSERT INTO marca(nombre) VALUES('Polo');
+
+Estado:
+INSERT INTO estado(nombre) VALUES('nuevo');
+INSERT INTO estado(nombre) VALUES('seminuevo');
+INSERT INTO estado(nombre) VALUES('viejo');
+
+Categoria:
+INSERT INTO categoria(nombre) VALUES('Pantalones');
+
+Subcategoria:
+INSERT INTO subcategoria(nombre, id_categoria) VALUES('Pantalones cortos',1);
+
+Pais
+INSERT INTO pais(nombre,lada) VALUES('México','+52');
+
+Usuario
+INSERT INTO usuario(nombre_usuario,password,id_pais,telefono,correo) VALUES('pantoja2001','13dpr0056c.',1,'+527721257773','fuchiboldan@gmail.com');
+
+Prenda 
+INSERT INTO prenda(nombre, id_categoria, id_subcategoria, id_marca, color, id_estado, fotografia, disponible, necesita_reparacion, tipo_reparacion, id_usuario) VALUES('Pantalón Cargo C', 1, 1, 1, 'azul marino', 1, '', 1, 0, '', 1);
+
