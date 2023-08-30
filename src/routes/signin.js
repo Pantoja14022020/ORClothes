@@ -22,7 +22,6 @@ router.post('/',async (req,res) => {
         if(coincide){
             res.redirect('/armario/usuario/'+id_usuario);
         }else{
-            console.log("incorrecta passo")
             req.flash('success_signup','Contraseña incorrecta');
             res.redirect('/signin');
         }

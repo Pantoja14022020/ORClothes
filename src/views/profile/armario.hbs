@@ -1,1 +1,35 @@
-<h1>armario</h1>
+<div id="armario">
+    <header id="armario-header">
+        <nav id="armario-nav">
+            <button id="menu-bars"><i class="fa-solid fa-bars"></i></button>
+        </nav>
+    </header>
+    <main id="container-profile">
+        <div id="profile-info">
+            <div id="img-container">
+                <div id="back-img"><img src="{{img}}" alt="img-profile"></div>
+            </div>
+            <b>{{nombre_usuario}}</b>
+            <p>{{correo}}</p>
+        </div>
+    </main>
+    <div id="resumen-armario">
+        <i class="fa-solid fa-circle-info icon-resumen"></i>
+        <h1>Resumen</h1>
+        <div class="info-resumen">
+            <i class="fa-solid fa-shirt"></i> <div><b>Total de prendas: </b> <p>{{totalPrendas}}</p></div>
+        </div>
+        <div class="info-resumen">
+            <i class="fa-solid fa-check"></i> <div><b>Disponibles para usar: </b> <p>{{_disponibles}}</p></div>
+        </div>
+        <div class="info-resumen">
+            <i class="fa-solid fa-wrench"></i> <div><b>Reparación: </b> <p>{{_necesitaReparacion}}</p></div>
+        </div>
+        <div class="info-resumen">
+            <i class="fa-solid fa-trash"></i> <div><b>Sucios: </b> <p>{{_sucios}}</p></div>
+        </div>
+        <div class="info-resumen">
+            <i class="fa-solid fa-water"></i> <div><b>Lavanderia: </b> <p>{{_lavanderia}}</p></div>
+        </div>
+    </div>
+</div>

@@ -35,9 +35,7 @@ app.use(session({
     saveUninitialized: true
 }));
 app.use(flash());
-app.use(express.urlencoded({extended: false}));//Es para acpetar los datos sencillos y no imagenes que me envien los usuarios desde formularios
-
-
+app.use(express.urlencoded({extended: true}));//Es para acpetar los datos sencillos y no imagenes que me envien los usuarios desde formularios
 
 
 

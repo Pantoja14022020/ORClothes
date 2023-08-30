@@ -1,11 +1,11 @@
 const mainSignupInterfaz = document.getElementById('main-signup');
 
+
 if(mainSignupInterfaz){
     setTimeout(()=>{
         mainSignupInterfaz.classList.add('show');
     },500);
 }
-
 
 
 //Validar que se ingrese todos los campos
