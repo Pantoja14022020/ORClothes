@@ -22,7 +22,7 @@ const storage = multer.diskStorage({
     destination: function (req, file, cb) {
         console.log("pasito")
         
-        cloudinary.api.root_folder(carpetaEnCloudinary, (error, result) => {
+        cloudinary.api.root_folder('uploads', (error, result) => {
             if (error) {
               console.error('Error al obtener información sobre la carpeta:', error);
             } else {
