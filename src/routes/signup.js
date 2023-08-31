@@ -11,7 +11,7 @@ const router = express.Router();//Solo especificamos que queremos su modulo llam
 
 
 
-cloudinary.config(process.env.CLOUDINARY_URL);//Importamos la variable de entorno CLOUDINARY_URL
+//cloudinary.config(process.env.CLOUDINARY_URL);//Importamos la variable de entorno CLOUDINARY_URL
 
 
 
