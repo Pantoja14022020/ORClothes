@@ -42,7 +42,7 @@ router.post('/' ,async (req,res)=>{
 
     
     try {
-        const [row,fields] = (await connection.execute('INSERT INTO usuario(nombre_usuario,password,telefono,correo,img) VALUES(?,?,?,?,?)',[nombre,hashedPassword,phone,correo,secure_url]));
+        const [row,fields] = (await connection.execute('INSERT INTO usuario(nombre_usuario,password,telefono,correo) VALUES(?,?,?,?)',[nombre,hashedPassword,phone,correo]));
         req.flash('success_signup','Usted ha sido registrado');
     } catch (error) {
         console.log(error)
