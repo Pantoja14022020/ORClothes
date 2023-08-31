@@ -16,7 +16,7 @@ cloudinary.config(process.env.CLOUDINARY_URL);//Importamos la variable de entorn
 
 
 
-
+console.log("aquiiii")
 // Configuración de multer para manejar archivos
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
