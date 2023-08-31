@@ -62,7 +62,9 @@ router.post('/', upload.single('profile') ,async (req,res)=>{
 
 
     // Construir la ruta completa del archivo donde se va a guardar
+    console.log("linea 66");
     const rutaArchivo = "./src/uploads/" + req.file.filename;
+    console.log("linea 66");
     await Promise.all(rutaArchivo);//Esperar a que se resuelva esta promesa, para que pueda continuar con el siguiente codigo
     const {secure_url} = await cloudinary.uploader.upload(req.file.path);//Regresa una promesa y obtenemos el url de la imagen
     
