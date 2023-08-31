@@ -99,7 +99,7 @@
     width: 90%;
     margin: auto;
     border-radius: 0.7rem;
-    margin-top: 0.5rem;
+    margin-top: 1.5rem;
     position: relative;
 }
 .icon-resumen{
@@ -148,7 +148,7 @@
     width: 90%;
     margin: auto;
     border-radius: 0.7rem;
-    margin-top: 0.5rem;
+    margin-top: 1.5rem;
     position: relative;
 }
 #registros h1{
@@ -211,7 +211,7 @@
     width: 90%;
     margin: auto;
     position: relative;  
-    margin-top: 0.5rem;
+    margin-top: 1.5rem;
     padding: 0.5rem; 
 }
 #consultas h1{
