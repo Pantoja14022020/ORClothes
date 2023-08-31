@@ -137,3 +137,128 @@
     font-size: 0.6rem;
     display: inline-block;
 }
+
+
+
+#registros{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+    width: 90%;
+    margin: auto;
+    border-radius: 0.7rem;
+    margin-top: 0.5rem;
+    position: relative;
+}
+#registros h1{
+    font-size: 0.8rem;
+    letter-spacing: 0.05rem;
+    color: #242424;
+}
+#apartados{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.apartado{
+    margin-top: 0.5rem;
+    width: 48%;
+    height: 80px;
+    border-radius: 0.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.apartado a{
+    text-decoration: none;
+    font-size: 0.6rem;
+    padding: 0.3rem;
+    letter-spacing: 0.05rem;
+    border-radius: 0.3rem;
+    color: white;
+}
+#marca{
+    background-image: url('../img/marca-background.svg');
+    background-position: center;
+    background-size: cover;
+}
+#tallas{
+    background-image: url('../img/tallas-background.svg');
+    background-position: center;
+    background-size: cover;
+}
+#categoria{
+    background-image: url('../img/categoria-background.svg');
+    background-position: center;
+    background-size: cover;
+}
+#subcategoria{
+    background-image: url('../img/subcategoria-background.svg');
+    background-position: center;
+    background-size: cover;
+}
+
+
+
+
+
+#consultas{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: auto;
+    position: relative;  
+    margin-top: 0.5rem;
+    padding: 0.5rem; 
+}
+#consultas h1{
+    font-size: 0.8rem;
+    letter-spacing: 0.05rem;
+    color: #242424;
+}
+#apartados-consultas{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.item-consulta{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 48%;
+    font-size: 0.6rem;
+    color: #666666;
+    letter-spacing: 0.05rem;
+}
+.item-consulta i{
+    margin-bottom: 0.5rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+#btn-new{
+    position: fixed;
+    bottom: 0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #000;
+    color: white;
+    border-radius: 50%;
+    border: none;
+    width: 50px;
+    height: 50px;
+}

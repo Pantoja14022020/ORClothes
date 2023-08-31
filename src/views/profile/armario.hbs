@@ -20,7 +20,7 @@
             <i class="fa-solid fa-shirt"></i> <div><b>Total de prendas: </b> <p>{{totalPrendas}}</p></div>
         </div>
         <div class="info-resumen">
-            <i class="fa-solid fa-check"></i> <div><b>Disponibles para usar: </b> <p>{{_disponibles}}</p></div>
+            <i class="fa-solid fa-check"></i> <div><b>Disponibles para alquilar: </b> <p>{{_disponibles}}</p></div>
         </div>
         <div class="info-resumen">
             <i class="fa-solid fa-wrench"></i> <div><b>Reparación: </b> <p>{{_necesitaReparacion}}</p></div>
@@ -32,4 +32,28 @@
             <i class="fa-solid fa-water"></i> <div><b>Lavanderia: </b> <p>{{_lavanderia}}</p></div>
         </div>
     </div>
+
+    <div id="registros">
+        <h1>Registrar</h1>
+        <div id="apartados">
+            <div id="marca" class="apartado"><a href="#" id="btn-marca-a">Marca</a></div>
+            <div id="tallas" class="apartado"><a href="#" id="btn-tallas-a">Tallas</a></div>
+            <div id="categoria" class="apartado"><a href="#" id="btn-categoria-a">Categoria</a></div>
+            <div id="subcategoria" class="apartado"><a href="#" id="btn-subcategoria-a">Subcategoria</a></div>
+        </div>
+    </div>
+
+    <div id="consultas">
+        <h1>Consultar</h1>
+        <div id="apartados-consultas">
+            <div id="disponibles" class="apartado item-consulta"><i class="fa-solid fa-check"></i>Disponibles</div>
+            <div id="reparacion" class="apartado item-consulta"><i class="fa-solid fa-wrench"></i>Reparación</div>
+            <div id="sucios" class="apartado item-consulta"><i class="fa-solid fa-trash"></i> Sucios</div>
+            <div id="lavanderia" class="apartado item-consulta"><i class="fa-solid fa-water"></i>Lavanderia</div>
+        </div>
+    </div>
+
+
+    <button id="btn-new"><i class="fa-solid fa-plus"></i></button>
+    
 </div>
