@@ -21,6 +21,15 @@ console.log("aquiiii")
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
         console.log("pasito")
+        
+        cloudinary.api.root_folder(carpetaEnCloudinary, (error, result) => {
+            if (error) {
+              console.error('Error al obtener información sobre la carpeta:', error);
+            } else {
+              console.log('Información de la carpeta:', result);
+            }
+        });
+
         cb(null, path.join(__dirname, 'uploads')); // Carpeta donde se guardarán los archivos subidos
     },
     filename: function (req, file, cb) {
