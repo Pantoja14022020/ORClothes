@@ -20,7 +20,7 @@ console.log("aquiiii")
 // Configuración de multer para manejar archivos
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, path.join(__dirname, '/src/uploads')); // Carpeta donde se guardarán los archivos subidos
+        cb(null, '/uploads'); // Carpeta donde se guardarán los archivos subidos
     },
     filename: function (req, file, cb) {
         cb(null, file.originalname); // Mantener el nombre original del archivo
