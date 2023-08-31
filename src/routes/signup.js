@@ -20,7 +20,7 @@ cloudinary.config(process.env.CLOUDINARY_URL);//Importamos la variable de entorn
 // Configuración de multer para manejar archivos
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, path.join(__dirname,'/src/uploads/',req.file.filename)); // Carpeta donde se guardarán los archivos subidos
+        cb(null, path.join(__dirname, '/src/uploads')); // Carpeta donde se guardarán los archivos subidos
     },
     filename: function (req, file, cb) {
         cb(null, file.originalname); // Mantener el nombre original del archivo
@@ -64,8 +64,8 @@ router.post('/', upload.single('profile') ,async (req,res)=>{
 
     // Construir la ruta completa del archivo donde se va a guardar
     console.log("linea 66");
-    console.log(__dirname,"./src/uploads/",req.file.filename)
-    const rutaArchivo = path.join(__dirname,"/src/uploads/",req.file.filename);
+    console.log()
+    const rutaArchivo = path.join(__dirname,"./src/uploads/",req.file.filename);
     console.log("linea 66");
     await Promise.all(rutaArchivo);//Esperar a que se resuelva esta promesa, para que pueda continuar con el siguiente codigo
     const {secure_url} = await cloudinary.uploader.upload(req.file.path);//Regresa una promesa y obtenemos el url de la imagen
