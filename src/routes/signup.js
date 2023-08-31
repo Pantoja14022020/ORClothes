@@ -20,7 +20,7 @@ cloudinary.config(process.env.CLOUDINARY_URL);//Importamos la variable de entorn
 // Configuración de multer para manejar archivos
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, './src/uploads'); // Carpeta donde se guardarán los archivos subidos
+        cb(null, path.join(__dirname,'./src/uploads',req.file.filename)); // Carpeta donde se guardarán los archivos subidos
     },
     filename: function (req, file, cb) {
         cb(null, file.originalname); // Mantener el nombre original del archivo
