@@ -21,7 +21,7 @@ console.log("aquiiii")
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
         console.log("pasito")
-        cb(null, path.join(__dirname, 'uploads')); // Carpeta donde se guardarán los archivos subidos
+        cb(null, '/opt/render/project/src/uploads/'); // Carpeta donde se guardarán los archivos subidos
     },
     filename: function (req, file, cb) {
         cb(null, file.originalname); // Mantener el nombre original del archivo
