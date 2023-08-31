@@ -100,10 +100,10 @@
 #main-signup div p a{
     text-decoration: none;
 }
-/*#profile::-webkit-file-upload-button {
+#profile::-webkit-file-upload-button {
     visibility: hidden;
     display: none;
-}*/
+}
 #profile{
     background-color: #000;
     border-radius: 0.3rem;
