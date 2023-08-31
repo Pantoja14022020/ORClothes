@@ -79,10 +79,14 @@
     overflow: hidden;
     border-radius: 50%;
     background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 #back-img img{
-    width: 100%;
-    height: 100%;
+    width: 30px;
+    height: 30px;
 }
 
 
