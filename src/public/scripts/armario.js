@@ -7,54 +7,11 @@ if(armario){
 }
 
 
-const marcaSeccion = document.getElementById('marca');
-const tallasSeccion = document.getElementById('tallas');
-const categoriaSeccion = document.getElementById('categoria');
-const subcategoriaSeccion = document.getElementById('subcategoria');
-
-
-if(marcaSeccion){
-    marcaSeccion.addEventListener('click',e=>{
-        console.log("click marca")
-    });
-}
-
-if(tallasSeccion){
-    tallasSeccion.addEventListener('click',e=>{
-        console.log("click talla")
-    });
-}
-
-if(categoriaSeccion){
-    categoriaSeccion.addEventListener('click',e=>{
-        console.log("click categoria")
-    });
-}
-
-if(subcategoriaSeccion){
-    subcategoriaSeccion.addEventListener('click',e=>{
-        console.log("click subcategoria")
-    });
-}
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/*
 const disponiblesSeccion = document.getElementById('disponibles');
 const reparacionSeccion = document.getElementById('reparacion');
 const suciosSeccion = document.getElementById('sucios');
@@ -82,5 +39,16 @@ if(suciosSeccion){
 if(lavanderiaSeccion){
     lavanderiaSeccion.addEventListener('click', e => {
         console.log("click en lavanderia")
+    });
+}*/
+
+
+
+const menuBars = document.getElementById('menu-bars');
+const menuArmario = document.getElementById('menu-armario');
+
+if(menuBars && menuArmario){
+    menuBars.addEventListener('click', e => {
+        menuArmario.classList.toggle('show-menu');
     });
 }

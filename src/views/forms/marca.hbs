@@ -1,0 +1,15 @@
+<div id="marca-interfaz">
+    <div id="marca-hero">
+        <a href="/armario/usuario/{{id_usuario}}" id="back-armario" class="azul-cielo"><i class="fa-solid fa-arrow-right-long fa-rotate-180"></i> </a>
+    </div>
+    <div id="form-marca-hero">
+        {{#if success_signup}}
+            <p id="msg-marca-correcto">{{success_signup}}</p>
+        {{/if}}
+        <p id="msg-marca-error" class="hide-marca-msg">No se acepta campos vacios</p>
+        <form action="/armario/usuario/{{id_usuario}}/marca" id="form-marca" method="post">
+            <input name="marca" type="text" placeholder="Ingresar marca" id="marca-input">
+            <button type="submit" id="btn-guardar-marca">Guardar</button>
+        </form>
+    </div>
+</div>

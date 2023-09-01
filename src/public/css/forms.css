@@ -1,0 +1,257 @@
+/*CSS Marca*/
+.show-marca-interfaz{
+    left: 0 !important;
+}
+#marca-interfaz{
+    position: relative;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    transition: all ease-in-out 0.3s;
+}
+#marca-hero{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-image: url('../img/marca-background.svg');
+    background-position: center;
+    background-size: cover;
+    height: 120px;
+    padding: 1rem;
+    padding-top: 1.5rem;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+#back-armario{
+    padding: 0.5rem;
+    color: white;
+    border-radius: 0.3rem;
+    margin: 0 !important;
+    text-decoration: none;
+}
+.azul-cielo{
+    background-color: #16b391;
+}
+#form-marca-hero{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#msg-marca-error{
+    font-size: 0.6rem;
+}
+#msg-marca-correcto{
+    font-size: 0.6rem;
+}
+.hide-marca-msg{
+    display: none;
+}
+#form-marca input{
+    padding: 0.5rem;
+    outline: none;
+    font-size: 0.6rem;
+    border-radius: 0.3rem;
+    text-align: center;
+    border: none;
+    color: #666666;
+}
+#btn-guardar-marca{
+    position: fixed;
+    bottom: 0.5rem;
+    right: 0.5rem;
+    border: none;
+    padding: 0.5rem;
+    background-color: #000;
+    color: white;
+    font-size: 0.6rem;
+    border-radius: 0.3rem;
+    letter-spacing: 0.05rem;
+}
+/*CSS Marca*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*CSS Categoria*/
+.show-categoria-interfaz{
+    left: 0 !important;
+}
+#categoria-interfaz{
+    position: relative;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    transition: all ease-in-out 0.3s;
+}
+#categoria-hero{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-image: url('../img/categoria-background.svg');
+    background-position: center;
+    background-size: cover;
+    height: 120px;
+    padding: 1rem;
+    padding-top: 1.5rem;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+.rojo-guinda{
+    background-color: #bd0853 !important;
+}
+#form-categoria-hero{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#msg-categoria-error{
+    font-size: 0.6rem;
+}
+#msg-categoria-correcto{
+    font-size: 0.6rem;
+}
+.hide-categoria-msg{
+    display: none;
+}
+#form-categoria input{
+    padding: 0.5rem;
+    outline: none;
+    font-size: 0.6rem;
+    border-radius: 0.3rem;
+    text-align: center;
+    border: none;
+    color: #666666;
+}
+#btn-guardar-categoria{
+    position: fixed;
+    bottom: 0.5rem;
+    right: 0.5rem;
+    border: none;
+    padding: 0.5rem;
+    background-color: #000;
+    color: white;
+    font-size: 0.6rem;
+    border-radius: 0.3rem;
+    letter-spacing: 0.05rem;
+}
+/*CSS Categoria*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*CSS Subcategoria*/
+.show-subcategoria-interfaz{
+    left: 0 !important;
+}
+#subcategoria-interfaz{
+    position: relative;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    transition: all ease-in-out 0.3s;
+}
+#subcategoria-hero{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-image: url('../img/subcategoria-background.svg');
+    background-position: center;
+    background-size: cover;
+    height: 120px;
+    padding: 1rem;
+    padding-top: 1.5rem;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+.verde-claro{
+    background-color: #2ad672;
+}
+#form-subcategoria-hero{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#msg-subcategoria-error{
+    font-size: 0.6rem;
+    margin-bottom: 0.5rem;
+}
+#msg-subcategoria-correcto{
+    font-size: 0.6rem;
+}
+.hide-subcategoria-msg{
+    display: none;
+}
+#form-subcategoria{
+    display: flex;
+    flex-direction: column;
+}
+#select-categoria{
+    width: fit-content;
+    margin: auto;
+    margin-bottom: 1rem;
+    border: none;
+    font-size: 0.6rem;
+    color: #666666;
+}
+#form-subcategoria input{
+    padding: 0.5rem;
+    outline: none;
+    font-size: 0.6rem;
+    border-radius: 0.3rem;
+    text-align: center;
+    border: none;
+    color: #666666;
+}
+#btn-guardar-subcategoria{
+    position: fixed;
+    bottom: 0.5rem;
+    right: 0.5rem;
+    border: none;
+    padding: 0.5rem;
+    background-color: #000;
+    color: white;
+    font-size: 0.6rem;
+    border-radius: 0.3rem;
+    letter-spacing: 0.05rem;
+}
+/*CSS Subcategoria*/

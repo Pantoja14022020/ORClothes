@@ -54,8 +54,10 @@ app.use(require('./routes'));//Le decimos que necesitamos el index.js dentro de 
 app.use('/signin',require('./routes/signin'));
 app.use('/signup',require('./routes/signup'));
 app.use('/armario',require('./routes/armario'));
-
-
+app.use('/armario',require('./routes/marca'));
+//app.use('/armario',require('./routes/talla'));
+app.use('/armario',require('./routes/categoria'));
+app.use('/armario',require('./routes/subcategoria'));
 
 
 //Public. Una carpeta donde se va colocar todo el codigo que el navegdor puede acceder, mis css, html etc.

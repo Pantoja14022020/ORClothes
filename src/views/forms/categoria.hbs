@@ -1,0 +1,15 @@
+<div id="categoria-interfaz">
+    <div id="categoria-hero">
+        <a href="/armario/usuario/{{id_usuario}}" id="back-armario" class="rojo-guinda"><i class="fa-solid fa-arrow-right-long fa-rotate-180"></i> </a>
+    </div>
+    <div id="form-categoria-hero">
+        {{#if success_signup}}
+            <p id="msg-categoria-correcto">{{success_signup}}</p>
+        {{/if}}
+        <p id="msg-categoria-error" class="hide-categoria-msg">No se acepta campos vacios</p>
+        <form action="/armario/usuario/{{id_usuario}}/categoria" id="form-categoria" method="post">
+            <input name="categoria" type="text" placeholder="Ingresar categoria" id="categoria-input">
+            <button type="submit" id="btn-guardar-categoria">Guardar</button>
+        </form>
+    </div>
+</div>

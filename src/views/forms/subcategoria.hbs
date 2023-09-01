@@ -1,0 +1,24 @@
+<div id="subcategoria-interfaz">
+    <div id="subcategoria-hero">
+        <a href="/armario/usuario/{{id_usuario}}" id="back-armario" class="verde-claro"><i class="fa-solid fa-arrow-right-long fa-rotate-180"></i> </a>
+    </div>
+    <div id="form-subcategoria-hero">
+        {{#if success_signup}}
+            <p id="msg-subcategoria-correcto">{{success_signup}}</p>
+        {{/if}}
+        <p id="msg-subcategoria-error" class="hide-subcategoria-msg">No se acepta campos vacios</p>
+        {{#if categorias}}
+            <form action="/armario/usuario/{{id_usuario}}/subcategoria" id="form-subcategoria" method="post">
+                <select name="categoria_selected" id="select-categoria">
+                    {{#each categorias}}
+                        <option value="{{id_categoria}}">{{nombre}}</option>
+                    {{/each}}
+                </select>
+                <input name="subcategoria" type="text" placeholder="Ingresar subcategoria" id="subcategoria-input">
+                <button type="submit" id="btn-guardar-subcategoria">Guardar</button>
+            </form>
+        {{else}}
+            <p id="msg-subcategoria-error">No se han registrado categorias</p>
+        {{/if}}
+    </div>
+</div>

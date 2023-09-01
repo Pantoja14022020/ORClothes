@@ -1,0 +1,15 @@
+<div id="talla-interfaz">
+    <div id="talla-hero">
+        <a href="/armario/usuario/{{id_usuario}}" id="back-armario"><i class="fa-solid fa-arrow-right-long fa-rotate-180"></i> </a>
+    </div>
+    <div id="form-talla-hero">
+        {{#if success_signup}}
+            <p id="msg-talla-correcto">{{success_signup}}</p>
+        {{/if}}
+        <p id="msg-talla-error" class="hide-talla-msg">No se acepta campos vacios</p>
+        <form action="/armario/usuario/{{id_usuario}}/talla" id="form-talla" method="post">
+            <input name="talla" type="text" placeholder="Ingresar talla" id="talla-input">
+            <button type="submit" id="btn-guardar-talla">Guardar</button>
+        </form>
+    </div>
+</div>
