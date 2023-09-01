@@ -58,6 +58,7 @@ app.use('/armario',require('./routes/marca'));
 //app.use('/armario',require('./routes/talla'));
 app.use('/armario',require('./routes/categoria'));
 app.use('/armario',require('./routes/subcategoria'));
+app.use('/armario',require('./routes/nueva_prenda'));
 
 
 //Public. Una carpeta donde se va colocar todo el codigo que el navegdor puede acceder, mis css, html etc.

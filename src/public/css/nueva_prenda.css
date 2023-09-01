@@ -1,0 +1,53 @@
+.negro-btn{
+    background-color: black;
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+}
+
+#form-nueva-prenda{
+    margin-top: 3rem;
+    padding: 0.5rem;
+}
+
+
+.item-form-new{
+    margin-bottom: 0.5rem;
+    font-size: 0.6rem;
+    color: #0c0c0c;
+}
+.item-form-new input{
+    padding: 0.3rem;
+    border: none;
+    width: 100%;
+    padding: 0.5rem;
+    outline: none;
+    font-size: 0.6rem;
+    color: #5c5c5c;
+}
+.item-form-new label{
+    color: #5c5c5c;
+}
+.item-form-new select{
+    width: 100%;
+    border: none;
+    font-size: 0.6rem;
+    padding: 0.3rem;
+    color: #5c5c5c;;
+}
+
+#btn-crear-prenda{
+    width: 100%;
+    padding: 0.5rem;
+    color: white;
+    border: none;
+    background-color: #2a2eff;
+    border-radius: 0.3rem;
+}
+
+
+.checkbox-input{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}

@@ -1,0 +1,69 @@
+<div id="nueva-prenda">
+   
+    <a href="/armario/usuario/{{id_usuario}}" id="back-armario" class="negro-btn"><i class="fa-solid fa-arrow-right-long fa-rotate-180"></i> </a>
+    
+    <form action="/armario/usuario/{{id_usuario}}/nueva_prenda" id="form-nueva-prenda" method="post">
+        
+        <div class="item-form-new">
+            <input type="text" placeholder="Código de la prenda. ej. 00122" name="nombre">
+        </div>
+
+        <div class="item-form-new">
+            <select name="id_categoria" id="categoria-input">
+                {{#each categorias}}
+                    <option value="{{id_categoria}}">{{nombre}}</option>
+                {{/each}}
+            </select>
+        </div>
+
+        <div class="item-form-new">
+            <select name="id_subcategoria" id="subcategoria-input">
+                {{#each subcategorias}}
+                    <option value="{{id_subcategoria}}">{{nombre}}</option>
+                {{/each}}
+            </select>
+        </div>
+        
+        <div class="item-form-new">
+            <select name="id_marca" id="marca-input">
+                {{#each marcas}}
+                    <option value="{{id_marca}}">{{nombre}}</option>
+                {{/each}}
+            </select>
+        </div>
+        
+        <div class="item-form-new">
+            <input type="text" placeholder="color">
+        </div>
+        
+        <div class="item-form-new">
+            <select name="id_estado" id="estado-input">
+                {{#each estados}}
+                    <option value="{{id_estado}}">{{nombre}}</option>
+                {{/each}}
+            </select>
+        </div>
+        
+        <div class="item-form-new checkbox-input">
+            <label for="disponible-input">Disponible</label>
+            <input type="checkbox" id="disponible-input" name="disponible">
+        </div>
+        
+        <div class="item-form-new checkbox-input">
+            <label for="fix-input">Requiere reparación</label>
+            <input type="checkbox" id="fix-input" name="req_reparacion">
+        </div>
+        
+        <div class="item-form-new">
+            <input type="text" placeholder="Descripcion de reparación">
+        </div>
+        
+        <div class="item-form-new checkbox-input">
+            <label for="lavanderia-input">Lavanderia</label>
+            <input type="checkbox" id="lavanderia-input" name="lavanderia" checked>
+        </div>
+
+        <button type="submit" id="btn-crear-prenda">Crear</button>
+
+    </form>
+</div>
