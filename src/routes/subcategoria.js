@@ -28,4 +28,32 @@ router.post('/usuario/:id/subcategoria', async (req,res)=>{//Creando una ruta ll
 });
 
 
+
+
+
+
+
+
+
+
+
+//Ver las subacategorias registrdas
+router.get('/usuario/:id/subcategoria/ver', async (req,res)=>{//Creando una ruta llamada / que renderiza el signup para el registro
+    const id_usuario = req.params.id;
+    const [row,fields] = (await connection.execute('SELECT * FROM subcategoria WHERE id_usuario = ?',[id_usuario]));
+    const subcategorias = row;
+    res.render('forms/ver_subcategorias.hbs',{id_usuario,subcategorias});
+});
+
+
+//Eliminar subcategoria especifica
+router.get('/usuario/:id/subcategoria/ver/:id_subcategoria', async (req,res)=>{//Creando una ruta llamada / que renderiza el signup para el registro
+    const id_usuario = req.params.id;
+    const id_subcategoria = req.params.id_subcategoria;
+    const [row,fields] = (await connection.execute('DELETE FROM subcategoria WHERE id_subcategoria = ?',[id_subcategoria]));
+    const [row_delete,fields_delete] = (await connection.execute('DELETE FROM prenda WHERE id_subcategoria = ?',[id_subcategoria]));
+    res.redirect('/armario/usuario/'+id_usuario+'/subcategoria/ver');
+});
+
+
 module.exports = router;

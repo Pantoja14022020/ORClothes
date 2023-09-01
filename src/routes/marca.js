@@ -25,5 +25,23 @@ router.post('/usuario/:id/marca', async (req,res)=>{//Creando una ruta llamada /
     res.redirect('/armario/usuario/'+id_usuario+'/marca');
 });
 
+//Ver las marcas registrdas
+router.get('/usuario/:id/marca/ver', async (req,res)=>{//Creando una ruta llamada / que renderiza el signup para el registro
+    const id_usuario = req.params.id;
+    const [row,fields] = (await connection.execute('SELECT * FROM marca WHERE id_usuario = ?',[id_usuario]));
+    const marcas = row;
+    res.render('forms/ver_marcas.hbs',{id_usuario,marcas});
+});
+
+
+//Eliminar marca especifica
+router.get('/usuario/:id/marca/ver/:id_marca', async (req,res)=>{//Creando una ruta llamada / que renderiza el signup para el registro
+    console.log("aqui merooo")
+    const id_usuario = req.params.id;
+    const id_marca = req.params.id_marca;
+    const [row,fields] = (await connection.execute('DELETE FROM marca WHERE id_marca = ?',[id_marca]));
+    const [row_delete,fields_delete] = (await connection.execute('DELETE FROM prenda WHERE id_marca = ?',[id_marca]));
+    res.redirect('/armario/usuario/'+id_usuario+'/marca/ver');
+});
 
 module.exports = router;

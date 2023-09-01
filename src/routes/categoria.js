@@ -26,4 +26,29 @@ router.post('/usuario/:id/categoria', async (req,res)=>{//Creando una ruta llama
 });
 
 
+
+
+//Ver las categorias registrdas
+router.get('/usuario/:id/categoria/ver', async (req,res)=>{//Creando una ruta llamada / que renderiza el signup para el registro
+    const id_usuario = req.params.id;
+    const [row,fields] = (await connection.execute('SELECT * FROM categoria WHERE id_usuario = ?',[id_usuario]));
+    const categorias = row;
+    res.render('forms/ver_categorias.hbs',{id_usuario,categorias});
+});
+
+
+
+
+//Eliminar categoria especifica
+router.get('/usuario/:id/categoria/ver/:id_categoria', async (req,res)=>{//Creando una ruta llamada / que renderiza el signup para el registro
+    const id_usuario = req.params.id;
+    const id_categoria = req.params.id_categoria;
+    const [row,fields] = (await connection.execute('DELETE FROM categoria WHERE id_categoria = ?',[id_categoria]));
+    const [row_delete,fields_delete] = (await connection.execute('DELETE FROM prenda WHERE id_subcategoria = ?',[id_categoria]));
+    const [row_delete_2,fields_delete_2] = (await connection.execute('DELETE FROM subcategoria WHERE id_categoria = ?',[id_categoria]));
+    res.redirect('/armario/usuario/'+id_usuario+'/categoria/ver');
+});
+
+
+
 module.exports = router;

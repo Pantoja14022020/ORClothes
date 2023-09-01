@@ -1,0 +1,8 @@
+<div id="categorias-registradas">
+    <a href="/armario/usuario/{{id_usuario}}/categoria" id="back-armario" class="rojo-guinda ver-btn-marca"><i class="fa-solid fa-arrow-right-long fa-rotate-180"></i> </a>
+    <div id="items-categorias">
+        {{#each categorias}}
+            <div class="item-categoria"><p>{{nombre}}</p><a href="/armario/usuario/{{id_usuario}}/categoria/ver/{{id_categoria}}"><i class="fa-solid fa-trash-can"></i></a></div>
+        {{/each}}
+    </div>
+</div>

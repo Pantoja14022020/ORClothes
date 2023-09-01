@@ -72,6 +72,18 @@
     border-radius: 0.3rem;
     letter-spacing: 0.05rem;
 }
+.visualizar-btn{
+    position: fixed;
+    bottom: 0.5rem;
+    left: 0.5rem;
+    border: none;
+    padding: 0.5rem;
+    color: white;
+    font-size: 0.6rem;
+    border-radius: 0.3rem;
+    letter-spacing: 0.05rem;
+    text-decoration: none;
+}
 /*CSS Marca*/
 
 
