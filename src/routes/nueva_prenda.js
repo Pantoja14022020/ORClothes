@@ -13,21 +13,37 @@ router.get('/usuario/:id/nueva_prenda', async (req,res)=>{//Creando una ruta lla
 });
 
 router.post('/usuario/:id/nueva_prenda', async (req,res)=>{//Creando una ruta llamada / que renderiza el signup para el registro
-    console.log(req.body)
-    /*const id_usuario = req.params.id;
-    const {marca} = req.body;
+    let {
+        nombre,
+        id_categoria,
+        id_subcategoria,
+        id_marca,
+        color,
+        id_estado,
+        fotografia,
+        disponible,
+        necesita_reparacion,
+        tipo_reparacion,
+        esta_lavanderia,
+        talla_descripcion,
+        codigo_prenda
+    } = req.body;
+    let id_usuario = req.params.id;
 
+    id_categoria = parseInt(id_categoria);
+    id_subcategoria = parseInt(id_subcategoria);
+    id_marca = parseInt(id_marca);
+    id_estado = parseInt(id_estado);
+    id_usuario = parseInt(id_usuario);
+    
     try {
-        const [row,fields] = (await connection.execute('INSERT INTO marca(nombre,id_usuario) VALUES(?,?)',[marca,id_usuario]));
-        req.flash('success_signup','Marca registrada');
+        const [row,fields] = (await connection.execute('INSERT INTO prenda(nombre,id_categoria,id_subcategoria,id_marca,color,id_estado,fotografia,disponible,necesita_reparacion,tipo_reparacion,id_usuario,esta_lavanderia,talla_descripcion,codigo_prenda) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)',[nombre,id_categoria,id_subcategoria,id_marca,color,id_estado,fotografia,disponible,necesita_reparacion,tipo_reparacion,id_usuario,esta_lavanderia,talla_descripcion,codigo_prenda]));
+        res.json({registrado: true});
     } catch (error) {
-        console.log(error)
-        req.flash('success_signup','No se pudo registrar');
+        res.json({registrado: false});
     } finally{
         connection.releaseConnection();
     }
-
-    res.redirect('/armario/usuario/'+id_usuario+'/marca');*/
 });
 
 
