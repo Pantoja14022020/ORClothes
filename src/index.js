@@ -10,8 +10,6 @@ const {connection} = require('./databases');//Importar la conexion a la db
 
 const app = express();//Iniciar express
 
-
-
 //Configuraciones para el servidor express
 app.set('port',process.env.PORT || 4000);//En que puerto va a funcionar el servidor express, si existe uno en el sistema operativo, entonces tomalo, caso contrario se toma el 4000
 app.set('views',path.join(__dirname,'views'));//Especificando donde esta la carpeta views, es decir las vistas o interfaces
@@ -31,7 +29,6 @@ app.use(session({
 }));
 app.use(flash());
 app.use(express.urlencoded({extended: true}));//Es para acpetar los datos sencillos y no imagenes que me envien los usuarios desde formularios
-
 
 
 /*Variable Globales flash*/

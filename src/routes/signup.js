@@ -29,7 +29,12 @@ router.get('/',noEstaLogeado,(req,res)=>{//Creando una ruta llamada / que render
 
 
 
+/*
 
+Mexico +52
+USA +1
+Colombia +57
+*/
 
 
 

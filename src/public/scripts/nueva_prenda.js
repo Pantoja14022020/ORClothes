@@ -11,7 +11,7 @@ window.addEventListener('load', async () => {
     const subcategoriaInputSelect = document.getElementById('subcategoria-input');//Selecciono el select de subcategroias
     if(categoriaInputSelect && subcategoriaInputSelect){
     
-        const {subcategorias} = await obtenerSubcategorias(5);
+        /*const {subcategorias} = await obtenerSubcategorias(5);
         subcategoriaInputSelect.innerHTML = ''//Limipiamos el select subcategoria
         subcategorias.forEach(subcategoria => {//Agregando los diferentes options al select subcategoria
             let {id_subcategoria, nombre} = subcategoria;
@@ -19,9 +19,9 @@ window.addEventListener('load', async () => {
             option.setAttribute('value',id_subcategoria);
             option.innerText = nombre;
             subcategoriaInputSelect.appendChild(option);
-        });
+        });*/
         
-        categoriaInputSelect.addEventListener('change', async e => {
+        /*categoriaInputSelect.addEventListener('change', async e => {
             const id_categoria = e.target.value;
             let {subcategorias} = await obtenerSubcategorias(id_categoria);
             subcategoriaInputSelect.innerHTML = ''//Limipiamos el select subcategoria
@@ -32,7 +32,7 @@ window.addEventListener('load', async () => {
                 option.innerText = nombre;
                 subcategoriaInputSelect.appendChild(option);
             });
-        });
+        });*/
 
     }
 

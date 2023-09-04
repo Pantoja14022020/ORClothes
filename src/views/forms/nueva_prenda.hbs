@@ -44,6 +44,9 @@
             <div class="item-form-new">
                 <label for="subcategoria-input" class="select-label">Seleccionar Subcategoria:</label>
                 <select name="id_subcategoria" id="subcategoria-input">
+                    {{#each subcategorias}}
+                        <option value="{{id_subcategoria}}">{{nombre}}</option>
+                    {{/each}}
                 </select>
             </div>
             
