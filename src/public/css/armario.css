@@ -299,12 +299,21 @@
 #menu-armario ul{
     list-style: none;
     padding: 0.7rem;
-    margin-top: 3rem;
+    margin-top: 4rem;
+}
+#menu-armario ul li{
+    border-radius: 0.3rem;
+    padding: 0.5rem;
+    transition: all ease-in-out 0.3s;
+    margin-bottom: 0.5rem;
+}
+#menu-armario ul li:hover{
+    background-color: #e4e4e4;
 }
 #menu-armario ul li a{
     text-decoration: none;
     color: #000;
-    font-size: 0.6rem;
+    font-size: 0.8rem;
 }
 #menu-armario ul li a i{
     margin-right: 0.5rem;
