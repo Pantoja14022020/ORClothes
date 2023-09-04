@@ -1,3 +1,12 @@
+.show-reparacion-interfaz{
+    left: 0 !important;
+}
+#reparacion-interfaz{
+    position: relative;
+    top: 0;
+    left: -100%;
+    transition: all ease-in-out 0.3s;
+}
 .amarillo-btn{
     background-color: #ffb74c;
     padding: 0.6rem;

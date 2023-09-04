@@ -6,3 +6,11 @@ if(messageSuccessConsulta){
         messageSuccessConsulta.classList.remove('show-message-success-consulta');
     },2000);
 }
+
+
+const interfazDisponibles = document.getElementById('interfaz-disponibles');
+if(interfazDisponibles){
+    setTimeout(()=>{
+        interfazDisponibles.classList.add('show-interfaz-disp');
+    },500)
+}

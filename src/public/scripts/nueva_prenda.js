@@ -1,7 +1,13 @@
 window.addEventListener('load', async () => {
 
 
+    const nuevaPrenda = document.getElementById('nueva-prenda');
 
+    if(nuevaPrenda){
+        setTimeout(()=>{
+            nuevaPrenda.classList.add('show-nueva-prenda');
+        },500);
+    }
 
 
 
