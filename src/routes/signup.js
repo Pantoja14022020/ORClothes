@@ -1,6 +1,7 @@
 const express = require('express');//Importando express para crear nuestras rutas
 const bcrypt = require('bcrypt');
 const { connection } = require('../databases');
+const {noEstaLogeado} = require('../middlewares/auth');
 //const multer = require('multer');
 //const cloudinary = require('cloudinary').v2;
 const fs = require('fs');
@@ -20,7 +21,7 @@ const router = express.Router();//Solo especificamos que queremos su modulo llam
 
 
 
-router.get('/',(req,res)=>{//Creando una ruta llamada / que renderiza el signup para el registro
+router.get('/',noEstaLogeado,(req,res)=>{//Creando una ruta llamada / que renderiza el signup para el registro
     res.render('auth/signup.hbs');
 });
 

@@ -1,10 +1,11 @@
 const express = require('express');//Importando express para crear nuestras rutas
 const { connection } = require('../databases');
+const {noEstaLogeado} = require('../middlewares/auth');
 const bcrypt = require('bcrypt');
 const router = express.Router();//Solo especificamos que queremos su modulo llamado Router()
 
 
-router.get('/',(req,res)=>{//Creando una ruta llamada / que renderiza el signup para el registro
+router.get('/',noEstaLogeado,(req,res)=>{//Creando una ruta llamada / que renderiza el signup para el registro 
     res.render('auth/signin.hbs');
 });
 
@@ -20,6 +21,7 @@ router.post('/',async (req,res) => {
         const {password,id_usuario} = row[0];//obtengo la verdadera contraseña
         const coincide = await bcrypt.compare(passInput,password);
         if(coincide){
+            req.session.usuario = id_usuario;//APENASSSSSS 1
             res.redirect('/armario/usuario/'+id_usuario);
         }else{
             req.flash('success_signup','Contraseña incorrecta');

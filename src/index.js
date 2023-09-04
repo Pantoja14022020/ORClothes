@@ -8,12 +8,7 @@ const cors = require('cors');
 const {connection} = require('./databases');//Importar la conexion a la db
 
 
-
-
-
 const app = express();//Iniciar express
-
-
 
 
 
@@ -51,6 +46,7 @@ app.use((req,res,next)=>{//Dejamos listo un middleware que toma un request,un re
 
 //Routes. Se define las rutas o urls del servidor
 app.use(require('./routes'));//Le decimos que necesitamos el index.js dentro de la carpeta routes. Basicamente estamos importando ese archivo
+app.use('/logout',require('./routes/logout'));
 app.use('/signin',require('./routes/signin'));
 app.use('/signup',require('./routes/signup'));
 app.use('/armario',require('./routes/armario'));
