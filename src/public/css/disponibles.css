@@ -115,3 +115,41 @@
 #eliminar-disp{
     background-color: #ff545c;
 }
+
+
+
+
+.show-message-success-consulta{
+    left: 0 !important;
+}
+#message-success-consulta{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    z-index: 8;
+    background-color: #000000a4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.6rem;
+    color: #666666;
+    transition: all ease-in-out 0.3s;
+}
+#container-message-success{
+    background-color: white;
+    border-radius: 0.3rem;
+    padding: 0.5rem;
+}
+#img-message-success{
+    width: 40px;
+    height: 40px;
+    margin: auto;
+    margin-bottom: 0.5rem;
+}
+#img-message-success img{
+    width: 100%;
+    height: 100%;
+}

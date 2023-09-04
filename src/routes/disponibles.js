@@ -22,8 +22,10 @@ router.get('/usuario/:id_usuario/disponibles/reparacion/:id_prenda', async (req,
     
     try {
         const [row,fields] = (await connection.execute('UPDATE prenda SET necesita_reparacion = ?, disponible = ?, esta_lavanderia = ?  WHERE id_prenda = ?',[1,0,0,id_prenda]));
+        req.flash('success_signup','Se movio a reparación');
         res.redirect('/armario/usuario/'+ id_usuario + '/disponibles');
     } catch (error) {
+        req.flash('success_signup','No se pudo mover');
         res.redirect('/armario/usuario/'+ id_usuario + '/disponibles');
     } finally{
         connection.releaseConnection();
@@ -40,8 +42,10 @@ router.get('/usuario/:id_usuario/disponibles/lavanderia/:id_prenda', async (req,
     
     try {
         const [row,fields] = (await connection.execute('UPDATE prenda SET necesita_reparacion = ?, disponible = ?, esta_lavanderia = ?  WHERE id_prenda = ?',[0,0,1,id_prenda]));
+        req.flash('success_signup','Se movio a lavanderia');
         res.redirect('/armario/usuario/'+ id_usuario + '/disponibles');
     } catch (error) {
+        req.flash('success_signup','No se pudo mover');
         res.redirect('/armario/usuario/'+ id_usuario + '/disponibles');
     } finally{
         connection.releaseConnection();
@@ -59,8 +63,10 @@ router.get('/usuario/:id_usuario/disponibles/eliminar/:id_prenda', async (req,re
     
     try {
         const [row,fields] = (await connection.execute('DELETE FROM prenda WHERE id_prenda = ?',[id_prenda]));
+        req.flash('success_signup','Se elimino la prenda');
         res.redirect('/armario/usuario/'+ id_usuario + '/disponibles');
     } catch (error) {
+        req.flash('success_signup','No se pudo eliminar');
         res.redirect('/armario/usuario/'+ id_usuario + '/disponibles');
     } finally{
         connection.releaseConnection();

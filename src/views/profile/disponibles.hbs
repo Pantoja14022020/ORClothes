@@ -4,6 +4,18 @@
         <h1 id="h1-disp">Prendas <span> Disponibles </span></h1>
     </div>
     <div id="prendas-disponibles">
+        
+        {{#if success_signup}}
+            <div id="message-success-consulta">
+                <div id="container-message-success">
+                    <div id="img-message-success">
+                        <img src="/img/feliz.png" alt="success">
+                    </div>
+                    <p>{{success_signup}}</p>
+                </div>
+            </div>
+        {{/if}}
+
         <!--nombre codigo talla categoria subcategoria marca color estado esta_lavanderia requiere_reparacion-->
         {{#each prendas}}
             <div class="card-item">
@@ -27,6 +39,13 @@
                     <a href="/armario/usuario/{{id_usuario}}/disponibles/lavanderia/{{id_prenda}}" id="lav-disp">Lavanderia</a>
                     <a href="/armario/usuario/{{id_usuario}}/disponibles/eliminar/{{id_prenda}}" id="eliminar-disp">Eliminar</a>
                 </div>
+            </div>
+        {{else}}
+            <div class="no-encontrado-img-container">
+                <div id="img-no-enc">
+                    <img src="/img/nada.png" alt="not founded">
+                </div>
+                <p>No Hay</p>
             </div>
         {{/each}}
     </div>

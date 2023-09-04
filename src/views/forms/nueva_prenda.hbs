@@ -19,83 +19,99 @@
         <h1>Agregar <span>Nueva Prenda</span></h1>
     </div>
     
-    <form itemid="{{id_usuario}}" action="/armario/usuario/{{id_usuario}}/nueva_prenda" id="form-nueva-prenda" method="post">
-        
-        <div class="item-form-new">
-            <input id="codigo_prenda" type="number" placeholder="Código de la prenda. ej. 00122" name="codigo" autocomplete="off">
-        </div>
+    {{#if mostrarForm}}
 
-        <div class="item-form-new">
-            <input id="nombre_prenda" type="text" placeholder="Nombre de la prenda" name="nombre" autocomplete="off">
-        </div>
 
-        <div class="item-form-new">
-            <label for="categoria-input" class="select-label">Seleccionar Categoria:</label>
-            <select name="id_categoria" id="categoria-input">
-                {{#each categorias}}
-                    <option value="{{id_categoria}}">{{nombre}}</option>
-                {{/each}}
-            </select>
-        </div>
-
-        <div class="item-form-new">
-            <label for="subcategoria-input" class="select-label">Seleccionar Subcategoria:</label>
-            <select name="id_subcategoria" id="subcategoria-input">
-            </select>
-        </div>
+        <form itemid="{{id_usuario}}" action="/armario/usuario/{{id_usuario}}/nueva_prenda" id="form-nueva-prenda" method="post">
         
-        <div class="item-form-new">
-            <label for="marca-input" class="select-label">Seleccionar Marca:</label>
-            <select name="id_marca" id="marca-input">
-                {{#each marcas}}
-                    <option value="{{id_marca}}">{{nombre}}</option>
-                {{/each}}
-            </select>
-        </div>
-        
-        <div class="item-form-new">
-            <input type="text" placeholder="Color" autocomplete="off" id="color-form-prenda">
-        </div>
-
-        <div class="item-form-new">
-            <textarea id="talla-text-area" name="talla_descripcion" placeholder="Descripcion de la talla" autocomplete="off"></textarea>
-        </div>
-        
-        <div class="item-form-new">
-            <label for="estado-input" class="select-label">Seleccionar Estado:</label>
-            <select name="id_estado" id="estado-input">
-                {{#each estados}}
-                    <option value="{{id_estado}}">{{nombre}}</option>
-                {{/each}}
-            </select>
-        </div>
-        
-        <div class="item-form-new" id="disponible-input">
-            <div class="checkbox-input">
-                <label for="diponibilidad">Disponible</label>
-                <input type="checkbox"  name="disponible" id="diponibilidad">
+            <div class="item-form-new">
+                <input id="codigo_prenda" type="number" placeholder="Código de la prenda. ej. 00122" name="codigo" autocomplete="off">
             </div>
-        </div>
-        
-        <div class="item-form-new" id="requiere-reparacion">
-            <div class="checkbox-input" >
-                <label for="fix-input">Requiere reparación</label>
-                <input type="checkbox" id="fix-input" name="req_reparacion">
+
+            <div class="item-form-new">
+                <input id="nombre_prenda" type="text" placeholder="Nombre de la prenda" name="nombre" autocomplete="off">
             </div>
-        </div>
-        
-        <div class="item-form-new hide-form-prenda" id="descripcion-reparacion">
-            <input id="descripcion_reparacion" type="text" placeholder="Descripcion de reparación" autocomplete="off" value="">
-        </div>
-        
-        <div class="item-form-new" id="esta-lavanderia">
-            <div class="checkbox-input">
-                <label for="lavanderia-input">Esta en lavanderia</label>
-                <input type="checkbox" id="lavanderia-input" name="lavanderia">
+
+            <div class="item-form-new">
+                <label for="categoria-input" class="select-label">Seleccionar Categoria:</label>
+                <select name="id_categoria" id="categoria-input">
+                    {{#each categorias}}
+                        <option value="{{id_categoria}}">{{nombre}}</option>
+                    {{/each}}
+                </select>
             </div>
+
+            <div class="item-form-new">
+                <label for="subcategoria-input" class="select-label">Seleccionar Subcategoria:</label>
+                <select name="id_subcategoria" id="subcategoria-input">
+                </select>
+            </div>
+            
+            <div class="item-form-new">
+                <label for="marca-input" class="select-label">Seleccionar Marca:</label>
+                <select name="id_marca" id="marca-input">
+                    {{#each marcas}}
+                        <option value="{{id_marca}}">{{nombre}}</option>
+                    {{/each}}
+                </select>
+            </div>
+            
+            <div class="item-form-new">
+                <input type="text" placeholder="Color" autocomplete="off" id="color-form-prenda">
+            </div>
+
+            <div class="item-form-new">
+                <textarea id="talla-text-area" name="talla_descripcion" placeholder="Descripcion de la talla" autocomplete="off"></textarea>
+            </div>
+            
+            <div class="item-form-new">
+                <label for="estado-input" class="select-label">Seleccionar Estado:</label>
+                <select name="id_estado" id="estado-input">
+                    {{#each estados}}
+                        <option value="{{id_estado}}">{{nombre}}</option>
+                    {{/each}}
+                </select>
+            </div>
+            
+            <div class="item-form-new" id="disponible-input">
+                <div class="checkbox-input">
+                    <label for="diponibilidad">Disponible</label>
+                    <input type="checkbox"  name="disponible" id="diponibilidad">
+                </div>
+            </div>
+            
+            <div class="item-form-new" id="requiere-reparacion">
+                <div class="checkbox-input" >
+                    <label for="fix-input">Requiere reparación</label>
+                    <input type="checkbox" id="fix-input" name="req_reparacion">
+                </div>
+            </div>
+            
+            <div class="item-form-new hide-form-prenda" id="descripcion-reparacion">
+                <input id="descripcion_reparacion" type="text" placeholder="Descripcion de reparación" autocomplete="off" value="">
+            </div>
+            
+            <div class="item-form-new" id="esta-lavanderia">
+                <div class="checkbox-input">
+                    <label for="lavanderia-input">Esta en lavanderia</label>
+                    <input type="checkbox" id="lavanderia-input" name="lavanderia">
+                </div>
+            </div>
+
+            <button type="submit" id="btn-crear-prenda">Crear</button>
+
+        </form>
+
+
+    {{else}}
+
+        <div class="error-falta-marca-cat-sub">
+            <div id="img-error-mcs">
+                <img src="/img/sad.png" alt="error">
+            </div>
+            <p>Registra al menos una categoria, subcategoria o marca</hp>
         </div>
 
-        <button type="submit" id="btn-crear-prenda">Crear</button>
+    {{/if}}
 
-    </form>
 </div>

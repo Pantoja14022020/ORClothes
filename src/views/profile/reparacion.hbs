@@ -3,9 +3,22 @@
         <a href="/armario/usuario/{{id_usuario}}" class="amarillo-btn"><i class="fa-solid fa-arrow-right-long fa-rotate-180"></i> </a>
         <h1 id="txt-hero-reparacion">Prendas <span> En Reparación</span></h1>
     </div>
+
+    {{#if success_signup}}
+        <div id="message-success-consulta">
+            <div id="container-message-success">
+                <div id="img-message-success">
+                    <img src="/img/feliz.png" alt="success">
+                </div>
+                <p>{{success_signup}}</p>
+            </div>
+        </div>
+    {{/if}}
+
     <div id="hero-reparacion"></div>
     <div id="items-reparacion">
         <div id="icon-reparacion-items"><i class="fa-solid fa-wrench"></i></div>
+        
         {{#each prendas}}
             <div class="item-reparacion">
                 <div id="info-prenda">
@@ -18,6 +31,14 @@
                     <a href="/armario/usuario/{{id_usuario}}/reparacion/lavanderia/{{id_prenda}}" id="lavanderia-btn" itemid="1">Lavanderia</a>
                     <a href="/armario/usuario/{{id_usuario}}/reparacion/disponible/{{id_prenda}}" id="disponible-btn">Disponible</a>
                 </div>
+            </div>
+
+        {{else}}
+            <div class="no-encontrado-img-container">
+                <div id="img-no-enc">
+                    <img src="/img/nada.png" alt="not founded">
+                </div>
+                <p>No Hay</p>
             </div>
         {{/each}}
     </div>

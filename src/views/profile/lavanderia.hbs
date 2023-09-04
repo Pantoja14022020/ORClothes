@@ -3,6 +3,18 @@
         <a href="/armario/usuario/{{id_usuario}}" class="verde-btn"><i class="fa-solid fa-arrow-right-long fa-rotate-180"></i> </a>
         <h1 id="txt-hero-reparacion">Prendas <span> en Lavanderia </span></h1>
     </div>
+    
+    {{#if success_signup}}
+            <div id="message-success-consulta">
+                <div id="container-message-success">
+                    <div id="img-message-success">
+                        <img src="/img/feliz.png" alt="success">
+                    </div>
+                    <p>{{success_signup}}</p>
+                </div>
+            </div>
+    {{/if}}
+
     <div id="hero-lavanderia"></div>
     <div id="items-reparacion">
         <div id="icon-lavanderia-items"><i class="fa-solid fa-water"></i></div>
@@ -16,6 +28,13 @@
                     <a href="/armario/usuario/{{id_usuario}}/lavanderia/reparacion/{{id_prenda}}" id="sucio-btn">Reparacion</a>
                     <a href="/armario/usuario/{{id_usuario}}/lavanderia/disponible/{{id_prenda}}" id="lavanderia-btn" itemid="1">Disponible</a>
                 </div>
+            </div>
+        {{else}}
+            <div class="no-encontrado-img-container">
+                <div id="img-no-enc">
+                    <img src="/img/nada.png" alt="not founded">
+                </div>
+                <p>No Hay</p>
             </div>
         {{/each}}
     </div>

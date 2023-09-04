@@ -9,7 +9,10 @@ router.get('/usuario/:id/nueva_prenda', async (req,res)=>{//Creando una ruta lla
     const [marcas,fields_1] = (await connection.execute('SELECT * FROM marca WHERE id_usuario = ?',[id_usuario]));
     const [subcategorias,fields_3] = (await connection.execute('SELECT * FROM subcategoria WHERE id_usuario = ?',[id_usuario]));
     const [estados,fields_2] = (await connection.execute('SELECT * FROM estado'));
-    res.render('forms/nueva_prenda.hbs',{id_usuario, categorias, subcategorias,marcas, estados});
+    
+    let mostrarForm = (marcas.length > 0 && subcategorias.length > 0 && categorias.length > 0) ? true : false;
+    
+    res.render('forms/nueva_prenda.hbs',{id_usuario, categorias, subcategorias,marcas, estados, mostrarForm});
 });
 
 router.post('/usuario/:id/nueva_prenda', async (req,res)=>{//Creando una ruta llamada / que renderiza el signup para el registro
