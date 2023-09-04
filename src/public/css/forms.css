@@ -43,10 +43,20 @@
     align-items: center;
 }
 #msg-marca-error{
-    font-size: 0.6rem;
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+    background-color: #bd0853;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
 }
 #msg-marca-correcto{
-    font-size: 0.6rem;
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+    background-color: #077430;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
 }
 .hide-marca-msg{
     display: none;
@@ -54,7 +64,7 @@
 #form-marca input{
     padding: 0.5rem;
     outline: none;
-    font-size: 0.6rem;
+    font-size: 0.8rem;
     border-radius: 0.3rem;
     text-align: center;
     border: none;
@@ -65,10 +75,10 @@
     bottom: 0.5rem;
     right: 0.5rem;
     border: none;
-    padding: 0.5rem;
+    padding: 1rem;
     background-color: #000;
     color: white;
-    font-size: 0.6rem;
+    font-size: 0.8rem;
     border-radius: 0.3rem;
     letter-spacing: 0.05rem;
 }
@@ -77,9 +87,9 @@
     bottom: 0.5rem;
     left: 0.5rem;
     border: none;
-    padding: 0.5rem;
+    padding: 1rem;
     color: white;
-    font-size: 0.6rem;
+    font-size: 0.8rem;
     border-radius: 0.3rem;
     letter-spacing: 0.05rem;
     text-decoration: none;
@@ -138,10 +148,20 @@
     align-items: center;
 }
 #msg-categoria-error{
-    font-size: 0.6rem;
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+    background-color: #bd0853;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
 }
 #msg-categoria-correcto{
-    font-size: 0.6rem;
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+    background-color: #077430;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
 }
 .hide-categoria-msg{
     display: none;
@@ -149,7 +169,7 @@
 #form-categoria input{
     padding: 0.5rem;
     outline: none;
-    font-size: 0.6rem;
+    font-size: 0.8rem;
     border-radius: 0.3rem;
     text-align: center;
     border: none;
@@ -160,10 +180,10 @@
     bottom: 0.5rem;
     right: 0.5rem;
     border: none;
-    padding: 0.5rem;
+    padding: 1rem;
     background-color: #000;
     color: white;
-    font-size: 0.6rem;
+    font-size: 0.8rem;
     border-radius: 0.3rem;
     letter-spacing: 0.05rem;
 }
@@ -224,11 +244,20 @@
     align-items: center;
 }
 #msg-subcategoria-error{
-    font-size: 0.6rem;
-    margin-bottom: 0.5rem;
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+    background-color: #bd0853;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
 }
 #msg-subcategoria-correcto{
-    font-size: 0.6rem;
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+    background-color: #077430;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
 }
 .hide-subcategoria-msg{
     display: none;
@@ -242,13 +271,17 @@
     margin: auto;
     margin-bottom: 1rem;
     border: none;
-    font-size: 0.6rem;
+    font-size: 0.8rem;
+    padding: 1rem;
+    outline: none;
     color: #666666;
+    background-color: #ebebeb;
+    border-radius: 0.3rem;
 }
 #form-subcategoria input{
     padding: 0.5rem;
     outline: none;
-    font-size: 0.6rem;
+    font-size: 0.8rem;
     border-radius: 0.3rem;
     text-align: center;
     border: none;
@@ -259,10 +292,10 @@
     bottom: 0.5rem;
     right: 0.5rem;
     border: none;
-    padding: 0.5rem;
+    padding: 1rem;
     background-color: #000;
     color: white;
-    font-size: 0.6rem;
+    font-size: 0.8rem;
     border-radius: 0.3rem;
     letter-spacing: 0.05rem;
 }
