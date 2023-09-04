@@ -1,0 +1,22 @@
+<div id="reparacion-interfaz">
+    <div id="navbar-nueva-prenda">
+        <a href="/armario/usuario/{{id_usuario}}" class="verde-btn"><i class="fa-solid fa-arrow-right-long fa-rotate-180"></i> </a>
+        <h1 id="txt-hero-reparacion">Prendas <span> en Lavanderia </span></h1>
+    </div>
+    <div id="hero-lavanderia"></div>
+    <div id="items-reparacion">
+        <div id="icon-lavanderia-items"><i class="fa-solid fa-water"></i></div>
+        {{#each prendas}}
+            <div class="item-reparacion">
+                <div id="info-prenda">
+                    <span id="codigo-portada"><i class="fa-solid fa-tag icon-label"></i><p id="bold-codigo"> {{codigo_prenda}}</p></span>
+                    <span><p id="nombre-prenda">{{nombre}}</p></span>
+                </div>
+                <div id="buttons-item">
+                    <a href="/armario/usuario/{{id_usuario}}/lavanderia/reparacion/{{id_prenda}}" id="sucio-btn">Reparacion</a>
+                    <a href="/armario/usuario/{{id_usuario}}/lavanderia/disponible/{{id_prenda}}" id="lavanderia-btn" itemid="1">Disponible</a>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+</div>

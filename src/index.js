@@ -60,7 +60,10 @@ app.use('/armario',require('./routes/categoria'));
 app.use('/armario',require('./routes/subcategoria'));
 app.use('/armario',require('./routes/nueva_prenda'));
 app.use('/obtenerSubcategorias',require('./routes/subcategorias'));
-
+app.use('/armario',require('./routes/reparacion'));
+app.use('/armario',require('./routes/sucios'));
+app.use('/armario',require('./routes/lavanderia'));
+app.use('/armario',require('./routes/disponibles'));
 
 //Public. Una carpeta donde se va colocar todo el codigo que el navegdor puede acceder, mis css, html etc.
 app.use(express.static(path.join(__dirname,'public')));//Especificando la ubicacion de la carpeta public
