@@ -5,6 +5,7 @@ const path  = require('path');//Se inicializa un modulo para especificar la carp
 const flash =  require('connect-flash');//Se importa el modulo connect-flash
 const session = require('express-session');
 const cors = require('cors');
+const multer = require('multer');//AGEREGUE
 const {connection} = require('./databases');//Importar la conexion a la db
 
 

@@ -2,8 +2,10 @@ const express = require('express');//Importando express para crear nuestras ruta
 const bcrypt = require('bcrypt');
 const { connection } = require('../databases');
 const {noEstaLogeado} = require('../middlewares/auth');
-//const multer = require('multer');
+
+const multer = require('multer');//AGREGUE
 //const cloudinary = require('cloudinary').v2;
+
 const fs = require('fs');
 const path = require('path');
 const router = express.Router();//Solo especificamos que queremos su modulo llamado Router()
@@ -37,17 +39,41 @@ Colombia +57
 */
 
 
+//AGREGUE
+const storage = multer.diskStorage({
+    destination: path.join(__dirname, '../public/uploads'),
+    filename:  (req, file, cb) => {
+        cb(null, file.originalname);
+    }
+})
+const uploadImage = multer({
+    storage,
+    limits: {fileSize: 1000000}
+});
+//AGREGUE
 
-router.post('/' ,async (req,res)=>{
-    
+
+
+router.post('/' ,uploadImage.single('image'),async (req,res)=>{
+    console.log(req.body)
     const saltRounds = 10;
 
     const {nombre,password,pais,telefono,correo} = req.body;
     const phone = pais + telefono;
     const hashedPassword = await bcrypt.hash(password,saltRounds);
 
+    /*uploadImage(req, res, (err) => {//AGREGUE
+        if (err) {
+            err.message = 'The file is so heavy for my service';
+            return res.send(err);
+        }
+        console.log(req.file);
+        res.send('uploaded');
+    });//AGREGUE*/
     
     try {
+
+
         const [row,fields] = (await connection.execute('INSERT INTO usuario(nombre_usuario,password,telefono,correo) VALUES(?,?,?,?)',[nombre,hashedPassword,phone,correo]));
         req.flash('success_signup','Usted ha sido registrado');
     } catch (error) {

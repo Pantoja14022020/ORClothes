@@ -39,7 +39,7 @@
             <h1>Sign Up</h1>
         </div>
     </div>
-    <form id="signup-form" action="/signup" method="post">
+    <form id="signup-form" action="/signup" method="post" enctype="multipart/form-data">
 
         <div class="signup-item">
             <label for="nombre">Eligen un nombre de usuario</label>
@@ -67,6 +67,8 @@
             <label for="correo">Correo</label>
             <input name="correo" type="email" placeholder="tuejemplo@gmail.com" id="correo">
         </div>
+        
+        <input type="file" name="image">
 
         <button type="submit" id="btn-registrar" class="hide">Registrar</button>
     </form>
