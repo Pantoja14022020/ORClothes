@@ -55,12 +55,14 @@ const uploadImage = multer({
 
 
 router.post('/' ,uploadImage.single('image'),async (req,res)=>{
-    console.log(req.body)
+    console.log(req.file)
     const saltRounds = 10;
 
     const {nombre,password,pais,telefono,correo} = req.body;
     const phone = pais + telefono;
     const hashedPassword = await bcrypt.hash(password,saltRounds);
+
+
 
     /*uploadImage(req, res, (err) => {//AGREGUE
         if (err) {
@@ -72,9 +74,16 @@ router.post('/' ,uploadImage.single('image'),async (req,res)=>{
     });//AGREGUE*/
     
     try {
-
-
         const [row,fields] = (await connection.execute('INSERT INTO usuario(nombre_usuario,password,telefono,correo) VALUES(?,?,?,?)',[nombre,hashedPassword,phone,correo]));
+        
+        //Eliminar imagen
+        const {path} = req.file;
+        //Verificar si existe
+        if(fs.existsSync(path)){//Si existe esa ruta o directorio
+            fs.unlinkSync(path);//Lo borramos la imagen
+            console.log("se booro la imagen")
+        }
+
         req.flash('success_signup','Usted ha sido registrado');
     } catch (error) {
         console.log(error)
