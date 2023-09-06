@@ -13,7 +13,7 @@ const client = new twilio(accountSid, authToken);
 
 router.get('/usuario/:id/disponibles', async (req,res)=>{//Creando una ruta llamada / que renderiza el signup para el registro
     const id_user = req.params.id;
-    const [prendas,fields] = (await connection.execute('SELECT p.id_prenda,p.id_usuario, p.nombre, p.codigo_prenda, p.color, p.talla_descripcion AS talla, c.nombre AS categoria, s.nombre AS subcategoria, m.nombre AS marca, e.nombre AS estado FROM prenda AS p INNER JOIN categoria AS c ON p.id_categoria = c.id_categoria INNER JOIN subcategoria AS s ON p.id_subcategoria = s.id_subcategoria INNER JOIN marca AS m ON p.id_marca = m.id_marca INNER JOIN estado AS e ON p.id_estado = e.id_estado WHERE p.id_usuario = ? AND p.disponible = ?',[id_user,1]));
+    const [prendas,fields] = (await connection.execute('SELECT p.fotografia,p.id_prenda,p.id_usuario, p.nombre, p.codigo_prenda, p.color, p.talla_descripcion AS talla, c.nombre AS categoria, s.nombre AS subcategoria, m.nombre AS marca, e.nombre AS estado FROM prenda AS p INNER JOIN categoria AS c ON p.id_categoria = c.id_categoria INNER JOIN subcategoria AS s ON p.id_subcategoria = s.id_subcategoria INNER JOIN marca AS m ON p.id_marca = m.id_marca INNER JOIN estado AS e ON p.id_estado = e.id_estado WHERE p.id_usuario = ? AND p.disponible = ?',[id_user,1]));
     res.render('profile/disponibles.hbs',{id_user,prendas});
 });
 

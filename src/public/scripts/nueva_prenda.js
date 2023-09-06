@@ -11,6 +11,14 @@ window.addEventListener('load', async () => {
 
 
 
+    const registroExitoso = document.getElementById('registro-exitoso');
+    if(registroExitoso){
+        setTimeout(() => {
+            registroExitoso.classList.add('show-success-prenda');
+        },500)
+    }
+
+
     //CATEGORIA - SUBCATEGORIAS
     //Logica para mostrar las subcategorias segun la categoria seleccionada
     const categoriaInputSelect = document.getElementById('categoria-input');//Selecciono el select de seleccionar categoria
@@ -143,12 +151,14 @@ window.addEventListener('load', async () => {
     const reparacionInputForm = document.getElementById('fix-input');
     const descripcionReparacionInputForm = document.getElementById('descripcion_reparacion');
     const estaLavanderiaInputForm = document.getElementById('lavanderia-input');
+    const imagenPrendaInputForm = document.getElementById('add-image-profile');
 
 
-    if(codigoPrenda && nombrePrenda && formNuevaPrenda && categoriaInputForm && subcategoriaInputForm && marcaInputForm && colorInputForm && descripcionTallaInputForm && estadoInputForm && disponibilidadInputForm && reparacionInputForm && descripcionReparacionInputForm && estaLavanderiaInputForm){
+    if( imagenPrendaInputForm && codigoPrenda && nombrePrenda && formNuevaPrenda && categoriaInputForm && subcategoriaInputForm && marcaInputForm && colorInputForm && descripcionTallaInputForm && estadoInputForm && disponibilidadInputForm && reparacionInputForm && descripcionReparacionInputForm && estaLavanderiaInputForm){
         formNuevaPrenda.addEventListener('submit', async e => {
-            e.preventDefault();
-            if( codigoPrenda.value == "" || nombrePrenda.value == ""  || colorInputForm.value == "" || descripcionTallaInputForm.value == "" || (disponibilidadInputForm.checked == false && reparacionInput.checked == false && estaLavanderiaInputForm.checked == false)){
+
+            if( imagenPrendaInputForm.files.length == 0 || codigoPrenda.value == "" || nombrePrenda.value == ""  || colorInputForm.value == "" || descripcionTallaInputForm.value == "" || (disponibilidadInputForm.checked == false && reparacionInput.checked == false && estaLavanderiaInputForm.checked == false)){
+                e.preventDefault();
                 const msgAlertPrenda = document.getElementById('msg-algunos-campos-vacios-nuevaprenda');
                 const p =  document.querySelector('#msg-nueva-prenda > p');
                 p.textContent = '';
@@ -157,8 +167,11 @@ window.addEventListener('load', async () => {
                 setTimeout(()=>{
                     msgAlertPrenda.classList.remove('show-alert-prenda');
                 },2000)
-            }else{
-                
+            }/*else{
+
+
+                /*AQUI
+
                 let codigo_prenda = codigoPrenda.value;
                 let nombre_prenda = nombrePrenda.value;
                 let _categoria = categoriaInputForm.value;
@@ -172,7 +185,24 @@ window.addEventListener('load', async () => {
                 let _descripcion_rep = descripcionReparacionInputForm.value;
                 let esta_en_lavanderia = estaLavanderiaInputForm.checked ? 1 : 0;
                 let id_usuario_form = e.target.getAttribute('itemid')
-    
+                
+
+                let formDatos = new FormData();
+                formDatos.append("codigo",codigoPrenda);
+                formDatos.append("nombre",nombrePrenda);
+                formDatos.append("id_categoria",_categoria);
+                formDatos.append("id_subcategoria",_subcategoria);
+                formDatos.append("id_marca",_marca);
+                formDatos.append("color",_color);
+                formDatos.append("talla_descripcion",_talla);
+                formDatos.append("id_estado",_estado);
+                formDatos.append("disponible",esta_disponible);
+                formDatos.append("req_reparacion",requiere_repararse);
+                formDatos.append("descripcion_reparacion",_descripcion_rep);
+                formDatos.append("lavanderia",esta_en_lavanderia);
+                formDatos.append("prenda_img",document.getElementById('add-image-profile').files);
+
+
                 let prenda = {
                     "nombre": nombre_prenda,
                     "id_categoria": _categoria,
@@ -180,7 +210,7 @@ window.addEventListener('load', async () => {
                     "id_marca": _marca,
                     "color": _color,
                     "id_estado": _estado,
-                    "fotografia": "",
+                    "fotografia": imagenPrendaInputForm.files,
                     "disponible": esta_disponible,
                     "necesita_reparacion": requiere_repararse,
                     "tipo_reparacion": _descripcion_rep,
@@ -194,10 +224,10 @@ window.addEventListener('load', async () => {
                 // Opciones de configuración de la solicitud
                 const options = {
                     method: 'POST', // Método HTTP POST
-                    headers: {
-                    'Content-Type': 'application/json' 
-                    },
-                    body: JSON.stringify(prenda)
+                    /*headers: {
+                        'Content-Type': 'application/json' 
+                    },*//*AQUI
+                    body: prenda
                 };
     
                 const {registrado} = await registrarPrenda(id_usuario_form,options);
@@ -219,9 +249,14 @@ window.addEventListener('load', async () => {
                     setTimeout(()=>{
                         msgAlertPrenda.classList.remove('show-alert-prenda');
                     },2000)
-                }
+                }*/
                 
-            }
+                
+
+
+
+
+            /*}*/
         });
     }
 

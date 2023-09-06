@@ -20,7 +20,7 @@ const signupForm = document.getElementById('signup-form');
 
 
 //Verificar que todos los campos esten llenos
-const inputs = document.querySelectorAll('.signup-item > input');
+const inputs = document.querySelectorAll('.signup-item  input');
 inputs.forEach(campo => {
     campo.addEventListener("input", verificarCamposLlenos);
 });

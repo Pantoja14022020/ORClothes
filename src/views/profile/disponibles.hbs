@@ -19,26 +19,32 @@
         <!--nombre codigo talla categoria subcategoria marca color estado esta_lavanderia requiere_reparacion-->
         {{#each prendas}}
             <div class="card-item">
-                <div id="header-card-item">
-                    <b>{{nombre}}</b>
-                    <div id="logo-img-card"><img src="/img/negro-logo.png" alt="logo"></div>
+                <div id="imagen-prenda-container" style="background-image: url('{{fotografia}}');">
+                   
                 </div>
-                <div id="codigo-card"><b>{{codigo_prenda}}</b></div>
-                <div id="details-card">
-                    <div id="categoria-card"><h5>Categoria</h5><p>{{categoria}}</p></div>
-                    <div id="subcategoria-card"><h5>Subcategoria</h5><p>{{subcategoria}}</p></div>
+                
+                <div id="details-prenda">
+                    <div id="header-card-item">
+                        <b>{{nombre}}</b>
+                    </div>
+                    <div id="codigo-card"><b>{{codigo_prenda}}</b></div>
+                    <div id="details-card">
+                        <div id="categoria-card"><h5>Categoria</h5><p>{{categoria}}</p></div>
+                        <div id="subcategoria-card"><h5>Subcategoria</h5><p>{{subcategoria}}</p></div>
+                    </div>
+                    <div id="more-details">
+                        <div id="marca-card"><h5>Marca</h5><p>{{marca}}</p></div>
+                        <div id="color-card"><h5>Color</h5><p>{{color}}</p></div>
+                        <div id="estado-card"><h5>Estado</h5><p>{{estado}}</p></div>
+                    </div>
+                    <div id="talla-card"><h5>Talla</h5><p>{{talla}}</p></div>
+                    <div id="actions-card">
+                        <a href="/armario/usuario/{{id_usuario}}/disponibles/reparacion/{{id_prenda}}" id="reparacion-disp">Reparacion</a>
+                        <a href="/armario/usuario/{{id_usuario}}/disponibles/lavanderia/{{id_prenda}}" id="lav-disp">Lavanderia</a>
+                        <a href="/armario/usuario/{{id_usuario}}/disponibles/eliminar/{{id_prenda}}" id="eliminar-disp">Eliminar</a>
+                    </div>
                 </div>
-                <div id="more-details">
-                    <div id="marca-card"><h5>Marca</h5><p>{{marca}}</p></div>
-                    <div id="color-card"><h5>Color</h5><p>{{color}}</p></div>
-                    <div id="estado-card"><h5>Estado</h5><p>{{estado}}</p></div>
-                </div>
-                <div id="talla-card"><h5>Talla</h5><p>{{talla}}</p></div>
-                <div id="actions-card">
-                    <a href="/armario/usuario/{{id_usuario}}/disponibles/reparacion/{{id_prenda}}" id="reparacion-disp">Reparacion</a>
-                    <a href="/armario/usuario/{{id_usuario}}/disponibles/lavanderia/{{id_prenda}}" id="lav-disp">Lavanderia</a>
-                    <a href="/armario/usuario/{{id_usuario}}/disponibles/eliminar/{{id_prenda}}" id="eliminar-disp">Eliminar</a>
-                </div>
+                
             </div>
         {{else}}
             <div class="no-encontrado-img-container">

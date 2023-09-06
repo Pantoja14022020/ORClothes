@@ -47,7 +47,7 @@ router.get('/usuario/:id_usuario/reparacion/lavanderia/:id_prenda', async (req,r
     let id_prenda = req.params.id_prenda;
     
     try {
-        const [row,fields] = (await connection.execute('UPDATE prenda SET necesita_reparacion = ?, disponible = ?, esta_lavanderia = ?  WHERE id_prenda = ?',[0,0,1,id_prenda]));
+        const [row,fields] = (await connection.execute('UPDATE prenda SET necesita_reparacion = ?, tipo_reparacion = ?,disponible = ?, esta_lavanderia = ?  WHERE id_prenda = ?',[0,'',0,1,id_prenda]));
         
         
         const [row_1,fields_1] = (await connection.execute('SELECT nombre,codigo_prenda FROM prenda WHERE id_prenda = ?',[id_prenda]))
@@ -84,7 +84,7 @@ router.get('/usuario/:id_usuario/reparacion/disponible/:id_prenda', async (req,r
     let id_prenda = req.params.id_prenda;
     
     try {
-        const [row,fields] = (await connection.execute('UPDATE prenda SET necesita_reparacion = ?, disponible = ?, esta_lavanderia = ?  WHERE id_prenda = ?',[0,1,0,id_prenda]));
+        const [row,fields] = (await connection.execute('UPDATE prenda SET necesita_reparacion = ?, tipo_reparacion = ?,disponible = ?, esta_lavanderia = ?  WHERE id_prenda = ?',[0,'',1,0,id_prenda]));
         
 
         
@@ -108,6 +108,35 @@ router.get('/usuario/:id_usuario/reparacion/disponible/:id_prenda', async (req,r
         res.redirect('/armario/usuario/'+ id_usuario + '/reparacion');
     } catch (error) {
         req.flash('success_signup','No se pudo mover');
+        res.redirect('/armario/usuario/'+ id_usuario + '/reparacion');
+    } finally{
+        connection.releaseConnection();
+    }
+});
+
+
+
+
+
+
+
+
+
+
+//REGISTRAR UNA DESCRIPCION DE LA REPARACION QUE SE DESEA REALIZAR A DETERMINADA PRENDA
+router.post('/usuario/:id_usuario/reparacion/describiendo/:id_prenda', async (req,res)=>{//Creando una ruta llamada / que renderiza el signup para el registro
+    
+    let id_usuario = req.params.id_usuario;
+    let id_prenda = req.params.id_prenda;
+    let {detalle} = req.body;
+
+    try {
+        const [row,fields] = (await connection.execute('UPDATE prenda SET tipo_reparacion = ? WHERE id_prenda = ?',[detalle,id_prenda]));
+       
+        req.flash('success_signup','Se agrego descripcion de reparación');
+        res.redirect('/armario/usuario/'+ id_usuario + '/reparacion');
+    } catch (error) {
+        req.flash('success_signup','No se pudo agregar descripcion de reparación');
         res.redirect('/armario/usuario/'+ id_usuario + '/reparacion');
     } finally{
         connection.releaseConnection();

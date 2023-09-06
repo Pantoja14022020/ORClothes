@@ -1,11 +1,13 @@
 <div id="nueva-prenda">
     
-    <section id="registro-exitoso">
-        <div id="msg-nueva-prenda-creada">
-            <div id="image-success"><img src="/img/feliz.png" alt="success"></div>
-            <p>Creado con exito</p>
-        </div>
-    </section>
+    {{#if success_signup}}
+        <section id="registro-exitoso">
+            <div id="msg-nueva-prenda-creada">
+                <div id="image-success"><img src="/img/feliz.png" alt="success"></div>
+                <p>{{success_signup}}</p>
+            </div>
+        </section>
+    {{/if}}
 
     <section id="msg-algunos-campos-vacios-nuevaprenda">
         <div id="msg-nueva-prenda">
@@ -22,7 +24,7 @@
     {{#if mostrarForm}}
 
 
-        <form itemid="{{id_usuario}}" action="/armario/usuario/{{id_usuario}}/nueva_prenda" id="form-nueva-prenda" method="post">
+        <form itemid="{{id_usuario}}" action="/armario/usuario/{{id_usuario}}/nueva_prenda" id="form-nueva-prenda" method="post" enctype="multipart/form-data">
         
             <div class="item-form-new">
                 <input id="codigo_prenda" type="number" placeholder="Código de la prenda. ej. 00122" name="codigo" autocomplete="off">
@@ -60,7 +62,7 @@
             </div>
             
             <div class="item-form-new">
-                <input type="text" placeholder="Color" autocomplete="off" id="color-form-prenda">
+                <input type="text" placeholder="Color" autocomplete="off" id="color-form-prenda" name="color">
             </div>
 
             <div class="item-form-new">
@@ -91,7 +93,7 @@
             </div>
             
             <div class="item-form-new hide-form-prenda" id="descripcion-reparacion">
-                <input id="descripcion_reparacion" type="text" placeholder="Descripcion de reparación" autocomplete="off" value="">
+                <input name="descripcion_reparacion" id="descripcion_reparacion" type="text" placeholder="Descripcion de reparación" autocomplete="off" value="">
             </div>
             
             <div class="item-form-new" id="esta-lavanderia">
@@ -99,6 +101,12 @@
                     <label for="lavanderia-input">Esta en lavanderia</label>
                     <input type="checkbox" id="lavanderia-input" name="lavanderia">
                 </div>
+            </div>
+
+
+            <div class="item-form-new select-label foto-prenda">
+                <label for="image">Seleccionar foto</label>
+                <div id="behind-btn" class="margin-img-prenda"><input type="file" name="prenda_img" id="add-image-profile"><i class="fa-solid fa-image"></i></div>
             </div>
 
             <button type="submit" id="btn-crear-prenda">Crear</button>

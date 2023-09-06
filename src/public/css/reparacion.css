@@ -66,11 +66,48 @@
     position: relative;
     text-align: center;
 }
+#image-reparacion-prenda{
+    width: 60px;
+    height: 60px;
+    margin: auto;
+    border-radius: 0.5rem;
+    background-position: center;
+    background-size: cover;
+    margin-bottom: 1rem;
+}
 #info-prenda{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+#detalle-reparacion{
+    display: flex;
+    flex-direction: row;
+    font-size: 0.6rem;
+}
+#detalle-input{
+    font-size: 0.6rem;
+    color: #666;
+    outline: none;
+    border: 1px solid #f1f1f1;
+    border-radius: 0.3rem;
+    transition: all ease-in-out 0.3s;
+}
+#btn-reg-rep{
+    background-color: #ffb74c;
+    border: none;
+    color: white;
+    padding: 0.3rem;
+    border-radius: 0.3rem;
+    margin-left: 0.5rem;
+    font-size: 0.6rem;
+}
+#detalle-input:focus{
+    border: 1px solid #ffedba;
+}
+#buttons-item{
+    display: block;
 }
 .icon-label{
     position: absolute;
