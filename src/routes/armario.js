@@ -5,7 +5,7 @@ const router = express.Router();//Solo especificamos que queremos su modulo llam
 router.get('/usuario/:id', async (req,res)=>{//Creando una ruta llamada / que renderiza el signup para el registro
     const id_usuario = req.params.id;
     const [row,fields] = (await connection.execute('SELECT * FROM usuario WHERE id_usuario = ?',[id_usuario]));
-    const {nombre_usuario, img, correo} = row[0];
+    const {nombre_usuario, image_url, correo} = row[0];
 
     //Obtener resumen del perfil de prendas
     const [prendas] = (await connection.execute('SELECT * FROM prenda WHERE id_usuario = ?',[id_usuario]));
@@ -21,7 +21,7 @@ router.get('/usuario/:id', async (req,res)=>{//Creando una ruta llamada / que re
     const _sucios = sucios.length;
     const _lavanderia = lavanderia.length;
 
-    res.render('profile/armario.hbs',{id_usuario, nombre_usuario, img, correo, totalPrendas, _disponibles, _necesitaReparacion,  _sucios, _lavanderia});
+    res.render('profile/armario.hbs',{id_usuario, nombre_usuario, image_url, correo, totalPrendas, _disponibles, _necesitaReparacion,  _sucios, _lavanderia});
 });
 
 //7712271087 beti

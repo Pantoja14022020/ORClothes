@@ -80,16 +80,14 @@
     height: 55px;
     overflow: hidden;
     border-radius: 50%;
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    background-position: center;
+    background-size: cover;
 }
+/*
 #back-img img{
     width: 30px;
     height: 30px;
-}
+}*/
 
 
 

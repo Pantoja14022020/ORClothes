@@ -4,17 +4,15 @@ const { connection } = require('../databases');
 const {noEstaLogeado} = require('../middlewares/auth');
 
 const multer = require('multer');//AGREGUE
-//const cloudinary = require('cloudinary').v2;
+
+
+const cloudinary = require('cloudinary').v2;
+cloudinary.config(process.env.CLOUDINARY_URL);//Importamos la variable de entorno CLOUDINARY_URL
+
 
 const fs = require('fs');
 const path = require('path');
 const router = express.Router();//Solo especificamos que queremos su modulo llamado Router()
-
-
-
-
-
-//cloudinary.config(process.env.CLOUDINARY_URL);//Importamos la variable de entorno CLOUDINARY_URL
 
 
 
@@ -47,15 +45,27 @@ const storage = multer.diskStorage({
     }
 })
 const uploadImage = multer({
-    storage,
-    limits: {fileSize: 1000000}
+    storage
+    //limits: {fileSize: 1000000}
 });
 //AGREGUE
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 router.post('/' ,uploadImage.single('image'),async (req,res)=>{
-    console.log(req.file)
+    //console.log(req.file)
     const saltRounds = 10;
 
     const {nombre,password,pais,telefono,correo} = req.body;
@@ -74,14 +84,21 @@ router.post('/' ,uploadImage.single('image'),async (req,res)=>{
     });//AGREGUE*/
     
     try {
-        const [row,fields] = (await connection.execute('INSERT INTO usuario(nombre_usuario,password,telefono,correo) VALUES(?,?,?,?)',[nombre,hashedPassword,phone,correo]));
         
-        //Eliminar imagen
+        //Obtener la ruta de destino donde esta la imagen
         const {path} = req.file;
-        //Verificar si existe
+
+        const {secure_url} = await cloudinary.uploader.upload(path);
+
+        //console.log(secure_url);
+
+        const [row,fields] = (await connection.execute('INSERT INTO usuario(nombre_usuario,password,telefono,correo, image_url) VALUES(?,?,?,?,?)',[nombre,hashedPassword,phone,correo,secure_url]));
+        
+    
+        //Verificar si existe la ruta donde esta el archivo y poder eliminar
         if(fs.existsSync(path)){//Si existe esa ruta o directorio
             fs.unlinkSync(path);//Lo borramos la imagen
-            console.log("se booro la imagen")
+            //console.log("se booro la imagen")
         }
 
         req.flash('success_signup','Usted ha sido registrado');
