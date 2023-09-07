@@ -1,0 +1,144 @@
+#solicitudes > nav{
+    display: flex;
+    flex-direction: row;
+    padding: 0.5rem;
+    align-items: center;
+    color: rgb(59, 59, 59);
+    background-color: rgb(228, 228, 228);
+    padding-bottom: 2rem;
+}
+#solicitudes h1{
+    margin-left: 0.5rem;
+    font-size: 1.2rem;
+}
+#btn-back-sol{
+    width: fit-content;
+    background-color: black;
+    padding: 0.5rem;
+    border-radius: 0.4rem;
+    color: white;
+    font-size: 0.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+
+
+#container-solicitudes{
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: -1rem;
+    background-color: rgb(228, 228, 228);
+    display: flex;
+    flex-direction: column;
+}
+.solicitud-item{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    background-color: white;
+    padding: 0.3rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+#img-solicitud{
+    width: 40px;
+    height: 40px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+}
+#info-general{
+    margin-left: 0.5rem;
+    display: flex;
+    flex-direction: column;
+}
+#info-prenda-sol{
+    font-size: 0.6rem;
+    display: flex;
+    flex-direction: row;
+    color: #666666;
+}
+#info-prenda-sol p{
+    margin-left: 0.5rem;
+}
+#cliente-info{
+    font-size: 0.6rem;
+    display: flex;
+    flex-direction: row;
+    color: #666666;
+    margin-top: 0.4rem;
+}
+#cliente-info b{
+    margin-left: 0.5rem;
+}
+#actions-solicitud{
+    position: absolute;
+    top: -0.5rem;
+    right: 0;
+    background-color: white;
+    padding: 0.3rem;
+    border-radius: 0.3rem;
+}
+#rechazar{
+    background-color: rgb(177, 38, 38);
+    color: white;
+    text-decoration: none;
+    padding: 0.2rem 0.4rem;
+    border-radius: 0.2rem;
+    margin-right: 1rem;
+}
+#aceptado{
+    background-color: rgb(40, 150, 86);
+    color: white;
+    text-decoration: none;
+    padding: 0.2rem 0.4rem;
+    border-radius: 0.2rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.hide-alert{
+    left: -100% !important;
+}
+#ultimo-modal{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.562);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 7;
+    transition: all ease-in-out 0.3s;
+}
+#msg-ultimo{
+    background-color: white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#msg-ultimo p{
+    font-size: 0.6rem;
+    margin-top: 1rem;
+    color: #666666;
+}

@@ -58,6 +58,15 @@ app.use('/armario',require('./routes/reparacion'));
 app.use('/armario',require('./routes/sucios'));
 app.use('/armario',require('./routes/lavanderia'));
 app.use('/armario',require('./routes/disponibles'));
+app.use('/armario',require('./routes/alquiladas'));
+app.use('/armario',require('./routes/solicitudes'));
+
+
+
+//RUTAS PARA LA PLATAFORMA WEB
+app.use('/orclothes',require('./routes/orclothes'));
+
+
 
 //Public. Una carpeta donde se va colocar todo el codigo que el navegdor puede acceder, mis css, html etc.
 app.use(express.static(path.join(__dirname,'public')));//Especificando la ubicacion de la carpeta public

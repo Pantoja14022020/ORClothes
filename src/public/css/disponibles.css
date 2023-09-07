@@ -147,6 +147,9 @@
 #eliminar-disp{
     background-color: #ff545c;
 }
+#alquilar-disp{
+    background-color: #146e3d;
+}
 
 
 
@@ -184,4 +187,36 @@
 #img-message-success img{
     width: 100%;
     height: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*ESTILOS PARA EL MODULO DE PRENDAS ALQUILADAS*/
+.show-interfaz-alq{
+    left: 0 !important;
+}
+#interfaz-alquiladas{
+    background-color: #ffffff !important;
+    position: relative;
+    top: 0;
+    left: -100%;
+    transition: all ease-in-out 0.3s;
+}
+#dis-disp{
+    background-color: #c5351b;
 }

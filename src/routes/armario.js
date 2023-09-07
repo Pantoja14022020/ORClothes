@@ -15,13 +15,15 @@ router.get('/usuario/:id', async (req,res)=>{//Creando una ruta llamada / que re
     const necesitaReparacion = prendas.filter( prenda => prenda.necesita_reparacion == 1);
     const sucios = prendas.filter( prenda => prenda.disponible == 0);
     const lavanderia = prendas.filter( prenda => prenda.esta_lavanderia == 1); 
+    const alquilado = prendas.filter( prenda => prenda.esta_alquilada == 1); 
 
     const _disponibles = disponibles.length;
     const _necesitaReparacion = necesitaReparacion.length;
     const _sucios = sucios.length;
     const _lavanderia = lavanderia.length;
+    const _esta_alquilada = alquilado.length;
 
-    res.render('profile/armario.hbs',{id_usuario, nombre_usuario, image_url, correo, totalPrendas, _disponibles, _necesitaReparacion,  _sucios, _lavanderia});
+    res.render('profile/armario.hbs',{id_usuario, nombre_usuario, image_url, correo, totalPrendas, _disponibles, _necesitaReparacion,  _sucios, _lavanderia, _esta_alquilada});
 });
 
 //7712271087 beti

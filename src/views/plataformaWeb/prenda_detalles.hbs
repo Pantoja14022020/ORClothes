@@ -1,0 +1,36 @@
+<div id="prenda-detalles">
+    {{#if success_signup}}
+        <main id="success-prenda-detalles">
+            <div id="container">
+                <div id="image-container"><img src="/img/feliz.png" alt="feli"></div>
+                <p>{{success_signup}}</p>
+            </div>
+        </main>
+    {{/if}}
+    <main id="modal-prenda-detalles-container">
+        <div id="modal-prenda-detalles">
+            <div id="close-modal"><i class="fa-solid fa-xmark"></i></div>
+            <form method="post" action="/orclothes/{{id_prenda}}/{{id_usuario}}/solicitar" id="form-modal-prenda">
+                <input type="email" name="email_apartar" id="email-apartar" placeholder="Tu correo electronico">
+                <input type="text" name="nombre_cliente" id="nombre_cliente" placeholder="Tu nombre completo">
+                <button id="btn-solicit" class="hide-btn-prenda">Solicitar</button>
+            </form>
+        </div>
+    </main>
+    <header id="header-prenda-detalles" style="background-image: url('{{fotografia}}');">
+        <a href="/orclothes" id="btn-back-orclothes"><i class="fa-solid fa-arrow-left"></i></a>
+    </header>
+    <div id="item-prenda-detalles">
+        <h1>{{nombre}}</h1>
+        <p><i class="fa-solid fa-droplet"></i>color {{color}}</p>
+        <b id="marca-prendadet">{{marca}}</b>
+
+        <div id="categorias-prenda-detalles"><b>{{categoria}}</b><p>{{subcategoria}}</p></div>
+        <span><i class="fa-solid fa-shirt"></i>{{estado}}</span>
+        <div id="talla-prenda-detalles">
+            <h3>Talla</h3>
+            <p>{{talla}}</p>
+        </div>
+    </div>
+    <button id="btn-solicitar">Solicitar</button>
+</div>

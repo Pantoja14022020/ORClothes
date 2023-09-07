@@ -1,0 +1,191 @@
+#header-prenda-detalles{
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 35vh;
+}
+#item-prenda-detalles{
+    width: 100%;
+    height: 65vh;
+    border-radius: 1rem;
+    margin-top: -1rem;
+    background-color: white;
+    padding: 0.5rem;
+}
+#item-prenda-detalles h1{
+    color: rgb(32, 32, 32);
+    font-size: 1.5rem;
+}
+#item-prenda-detalles i{
+    margin-right: 0.3rem;
+}
+#item-prenda-detalles > p{
+    font-size: 0.6rem;
+    color: #bbbbbb;
+}
+#marca-prendadet{
+    display: block;
+    margin-top: 1rem !important;
+    font-size: 0.8rem;
+    color: rgb(32, 32, 32);
+}
+
+#categorias-prenda-detalles{
+    display: flex;
+    flex-direction: row;
+    font-size: 0.6rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+#categorias-prenda-detalles b{
+    padding: 0.25rem;
+    border-radius: 0.2rem;
+    background-color: #181818;
+    color: #ffffff;
+}
+#categorias-prenda-detalles p{
+    margin-left: 0.5rem;
+    padding: 0.25rem;
+    border-radius: 0.2rem;
+    background-color: #afafaf;
+    color: #ffffff;
+}
+#item-prenda-detalles span{
+    font-size: 0.6rem;
+    color: white;
+    background-color: #2431df;
+    padding: 0.25rem;
+    border-radius: 0.2rem;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+#talla-prenda-detalles h3{
+    font-size: 0.8rem;
+    color: rgb(32, 32, 32);
+}
+#talla-prenda-detalles p{
+    margin-top: 0.25rem;
+    color: #bbb;
+    font-size: 0.6rem;
+}
+#btn-solicitar{
+    position: fixed;
+    bottom: 0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 95%;
+    height: 30px;
+    border: none;
+    background-color: #2431df;
+    color: white;
+    border-radius: 0.3rem;
+}
+
+
+
+
+
+
+.show-modal-prenda{
+    display: flex !important;
+}
+#modal-prenda-detalles-container{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #00000065;
+    z-index: 7;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    transition: all ease-in-out 0.3s;
+}
+#modal-prenda-detalles{
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+    width: 200px;
+    border-radius: 0.7rem;
+    position: relative;
+}
+#close-modal{
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+}
+#form-modal-prenda{
+    margin-top: 2rem;
+}
+#form-modal-prenda input{
+    border: none;
+    margin-bottom: 1rem;
+    width: 100%;
+    padding: 0.4rem;
+    outline: none;
+    font-size: 0.6rem;
+    color: #979797;
+}
+#btn-solicit{
+    width: 100%;
+    padding: 0.4rem;
+    font-size: 0.6rem;
+    color: white;
+    border: none;
+    background-color: #2431df;
+    border-radius: 0.3rem;
+}
+
+
+.hide-btn-prenda{
+    display: none;
+}
+
+
+
+
+
+
+.show-success-prenda-det{
+    left: -100% !important;
+}
+#success-prenda-detalles{
+    width: 100%;
+    height: 100vh;
+    background-color: #18181860;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 7;
+    transition: all ease-in-out 0.3s;
+}
+#container{
+    background-color: white;
+    padding: 0.4rem;
+    border-radius: 0.5rem;
+    font-size: 0.6rem;
+    color: #666;
+    text-align: center;
+}
+#container p{
+    margin-top: 0.5rem;
+}
+
+
+
+#btn-back-orclothes{
+    padding: 0.5rem;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    border-radius: 0.4rem;
+    font-size: 0.8rem;
+}

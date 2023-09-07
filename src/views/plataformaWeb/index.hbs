@@ -1,0 +1,30 @@
+<div id="main-web">
+    <header id="header-index">
+        <div id="logo-img-index"><img src="./img/logo.png" alt="logo"></div>
+        <h1>Establecimientos de Alquiler</h1>
+        <nav id="navbar-establecimientos">
+            <ul id="navbar-lista">
+                    <li class="navbar-item"><button class="btn-navbar" id="all-prendas">All</button></li>
+                {{#each prendas}}
+                    <li class="navbar-item"><button class="btn-navbar" data-id="{{id_usuario}}">{{nombre_usuario}}</button></li>
+                {{/each}}
+            </ul>
+        </nav>
+    </header>
+    {{#if prendas}}
+        <aside id="prendas">
+            {{#each prendas}}
+                <a href="/orclothes/{{id_prenda}}/{{id_usuario}}" class="item-prenda" data-id="{{id_usuario}}">
+                    <div>
+                        <figure id="figure-prenda-img"><div id="logo-empresa" style="background-image: url('{{image_url}}');"></div></figure>
+                        <div id="img-prenda" style="background-image: url('{{fotografia}}');"></div>
+                        <div id="info-prenda">
+                            <b>{{nombre}}</b>
+                            <p>{{marca}}</p>
+                        </div>
+                    </div>
+                </a>
+            {{/each}}
+        </aside>
+    {{/if}}
+</div>

@@ -1,0 +1,144 @@
+#main-web{
+    background-color: #f6f6f6;
+}
+#header-index{
+    background-image: url('../img/back-nav.svg');
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 250px;
+    padding: 0.5rem;
+}
+#header-index h1{
+    font-size: 1.2rem;
+}
+#logo-img-index{
+    width: 30px;
+    height: 30px;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.3rem;
+    background-color: rgb(29, 29, 29);
+}
+#logo-img-index img{
+    width: 100%;
+    height: 100%;
+}
+#header-index h1{
+    color: rgb(201, 201, 201);
+    margin-top: 0.5rem;
+}
+/* Estilo básico para el navbar */
+#navbar-establecimientos {
+    overflow-x: auto; /* Hace que el navbar sea desplazable horizontalmente */
+    overflow: hidden; /*Esocnder la barra de desplazamiento*/
+    margin-top: 0.3rem;
+}
+
+#navbar-lista {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: nowrap; /* Evita que las opciones se ajusten automáticamente */
+    overflow: auto; /* Hace que las opciones se ajusten automáticamente */
+}
+.navbar-item {
+    margin: 0;
+    padding: 10px 10px;
+}
+.navbar-item:first-child{
+    padding-left: 0;
+}
+.navbar-item button{
+    color: #414141;
+    text-decoration: none;
+    font-size: 0.6rem;
+    background-color: #090909;
+    padding: 0.3rem 0.5rem;
+    border: none;
+    font-weight: 100;
+    border-radius: 0.2rem;
+    transition: all ease-in-out 0.3s;
+}
+.active-navbar{
+    color: white !important;
+    background-color: #414141 !important;
+}
+
+
+
+
+
+
+
+
+
+#prendas{
+    width: 95%;
+    margin: auto;
+    display: flex;
+    margin-top: -8rem;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-bottom: 1rem;
+}
+.item-prenda{
+    width: 47%;
+    position: relative;
+    background-color: white;
+    border-radius: 0.3rem;
+    font-size: 0.6rem;
+    overflow: hidden;
+    margin-top: 1rem;
+    text-decoration: none;
+    -webkit-box-shadow: 0px 0px 8px -3px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 8px -3px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 8px -3px rgba(0,0,0,0.75);
+}
+#figure-prenda-img{
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    border-radius: 50%;
+    background-color: white;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#logo-empresa{
+    width: 21px;
+    height: 21px;
+    margin: auto;
+    border-radius: 50%;
+    background-position: center;
+    background-size: cover;
+}
+#img-prenda{
+    width: 100%;
+    height: 150px;
+    background-position: center;
+    background-size: cover;
+}
+#info-prenda{
+    padding: 0.5rem;
+    padding-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+}
+#info-prenda b{
+    font-size: 0.6rem;
+    color: #090909;
+    margin-bottom: 0.5rem;
+}
+#info-prenda p{
+    font-size: 0.6rem;
+    letter-spacing: 0.01rem;
+}

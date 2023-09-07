@@ -1,0 +1,29 @@
+<div id="solicitudes">
+    {{#if success_signup}}
+        <div id="ultimo-modal">
+            <div id="msg-ultimo">
+                <img src="/img/alerta.png" alt="alert">
+                <p>{{success_signup}}</p>
+            </div>
+        </div>
+    {{/if}}
+    <nav>
+        <a href="/armario/usuario/{{id_usuario}}" id="btn-back-sol"><i class="fa-solid fa-arrow-right-long fa-rotate-180"></i></a>
+        <h1>Solicitudes de Alquiler</h1>
+    </nav>
+    <div id="container-solicitudes">
+        {{#each pedidos}}
+            <div class="solicitud-item">
+                <div id="img-solicitud" style="background-image: url('{{fotografia}}');"></div>
+                <div id="info-general">
+                    <div id="info-prenda-sol"><b>{{codigo_prenda}}</b><p>{{nombre}}</p></div>
+                    <div id="cliente-info"><p id="nombre-cliente">{{nombre_cliente}}</p><b>{{correo}}</b></div>
+                </div>
+                <div id="actions-solicitud">
+                    <a id="rechazar" href="/armario/usuario/{{id_usuario}}/solicitudes/rechazado/{{id_pedido}}"><i class="fa-solid fa-xmark"></i></a>
+                    <a id="aceptado" href="/armario/usuario/{{id_usuario}}/solicitudes/aceptado/{{id_pedido}}/{{id_prenda}}"><i class="fa-solid fa-check"></i></a>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+</div>
