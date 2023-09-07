@@ -10,12 +10,12 @@ const tls = require('tls');
 const transporter = nodemailer.createTransport({
     host: 'smtp.gmail.com', // Cambia al servidor de correo correspondiente
     port: process.env.PORT_GMAIL, // Cambia al puerto correspondiente
-    /*secure: true,
+    secure: true,
     tls: {
         // Añade esta configuración para aceptar certificados autofirmados
         rejectUnauthorized: false,
         ciphers: 'SSLv3'
-    },*/
+    },
     auth: {
       user: process.env.USER_GMAIL, //dirección de correo
       pass: process.env.PASSWORD_GMAIL // contraseña
